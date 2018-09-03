@@ -10,6 +10,14 @@
 		E691D61A213D2AE2008A3B2E /* MHDependencyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E691D610213D2AE2008A3B2E /* MHDependencyKit.framework */; };
 		E691D61F213D2AE2008A3B2E /* MHDependencyKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E691D61E213D2AE2008A3B2E /* MHDependencyKitTests.swift */; };
 		E691D621213D2AE2008A3B2E /* MHDependencyKit.h in Headers */ = {isa = PBXBuildFile; fileRef = E691D613213D2AE2008A3B2E /* MHDependencyKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E691D62F213D2BFD008A3B2E /* SegueCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E691D62B213D2BFD008A3B2E /* SegueCoordinator.swift */; };
+		E691D630213D2BFD008A3B2E /* UIViewController+SegueCoordinator.h in Headers */ = {isa = PBXBuildFile; fileRef = E691D62C213D2BFD008A3B2E /* UIViewController+SegueCoordinator.h */; };
+		E691D631213D2BFD008A3B2E /* UIViewController+SegueCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = E691D62D213D2BFD008A3B2E /* UIViewController+SegueCoordinator.m */; };
+		E691D632213D2BFD008A3B2E /* UIViewController+SegueCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E691D62E213D2BFD008A3B2E /* UIViewController+SegueCoordinator.swift */; };
+		E691D634213D2C12008A3B2E /* MHDependencyKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E691D633213D2C12008A3B2E /* MHDependencyKit.swift */; };
+		E691D636213D2C5F008A3B2E /* SegueCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E691D635213D2C5F008A3B2E /* SegueCoordinatorTests.swift */; };
+		E691D638213D2C80008A3B2E /* XCTestExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E691D637213D2C7F008A3B2E /* XCTestExtensions.swift */; };
+		E691D63A213D2CEE008A3B2E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E691D639213D2CEE008A3B2E /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +37,15 @@
 		E691D619213D2AE2008A3B2E /* MHDependencyKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MHDependencyKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E691D61E213D2AE2008A3B2E /* MHDependencyKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MHDependencyKitTests.swift; sourceTree = "<group>"; };
 		E691D620213D2AE2008A3B2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E691D62A213D2B0E008A3B2E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		E691D62B213D2BFD008A3B2E /* SegueCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueCoordinator.swift; sourceTree = "<group>"; };
+		E691D62C213D2BFD008A3B2E /* UIViewController+SegueCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+SegueCoordinator.h"; sourceTree = "<group>"; };
+		E691D62D213D2BFD008A3B2E /* UIViewController+SegueCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+SegueCoordinator.m"; sourceTree = "<group>"; };
+		E691D62E213D2BFD008A3B2E /* UIViewController+SegueCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+SegueCoordinator.swift"; sourceTree = "<group>"; };
+		E691D633213D2C12008A3B2E /* MHDependencyKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MHDependencyKit.swift; sourceTree = "<group>"; };
+		E691D635213D2C5F008A3B2E /* SegueCoordinatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueCoordinatorTests.swift; sourceTree = "<group>"; };
+		E691D637213D2C7F008A3B2E /* XCTestExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestExtensions.swift; sourceTree = "<group>"; };
+		E691D639213D2CEE008A3B2E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +70,7 @@
 		E691D606213D2AE2008A3B2E = {
 			isa = PBXGroup;
 			children = (
+				E691D62A213D2B0E008A3B2E /* README.md */,
 				E691D612213D2AE2008A3B2E /* MHDependencyKit */,
 				E691D61D213D2AE2008A3B2E /* MHDependencyKitTests */,
 				E691D611213D2AE2008A3B2E /* Products */,
@@ -72,6 +90,11 @@
 			isa = PBXGroup;
 			children = (
 				E691D613213D2AE2008A3B2E /* MHDependencyKit.h */,
+				E691D633213D2C12008A3B2E /* MHDependencyKit.swift */,
+				E691D62B213D2BFD008A3B2E /* SegueCoordinator.swift */,
+				E691D62C213D2BFD008A3B2E /* UIViewController+SegueCoordinator.h */,
+				E691D62D213D2BFD008A3B2E /* UIViewController+SegueCoordinator.m */,
+				E691D62E213D2BFD008A3B2E /* UIViewController+SegueCoordinator.swift */,
 				E691D614213D2AE2008A3B2E /* Info.plist */,
 			);
 			path = MHDependencyKit;
@@ -80,7 +103,10 @@
 		E691D61D213D2AE2008A3B2E /* MHDependencyKitTests */ = {
 			isa = PBXGroup;
 			children = (
+				E691D637213D2C7F008A3B2E /* XCTestExtensions.swift */,
 				E691D61E213D2AE2008A3B2E /* MHDependencyKitTests.swift */,
+				E691D635213D2C5F008A3B2E /* SegueCoordinatorTests.swift */,
+				E691D639213D2CEE008A3B2E /* ViewController.swift */,
 				E691D620213D2AE2008A3B2E /* Info.plist */,
 			);
 			path = MHDependencyKitTests;
@@ -93,6 +119,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E691D630213D2BFD008A3B2E /* UIViewController+SegueCoordinator.h in Headers */,
 				E691D621213D2AE2008A3B2E /* MHDependencyKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -148,6 +175,7 @@
 				TargetAttributes = {
 					E691D60F213D2AE2008A3B2E = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
 					};
 					E691D618213D2AE2008A3B2E = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -194,6 +222,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E691D634213D2C12008A3B2E /* MHDependencyKit.swift in Sources */,
+				E691D62F213D2BFD008A3B2E /* SegueCoordinator.swift in Sources */,
+				E691D632213D2BFD008A3B2E /* UIViewController+SegueCoordinator.swift in Sources */,
+				E691D631213D2BFD008A3B2E /* UIViewController+SegueCoordinator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,6 +233,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E691D636213D2C5F008A3B2E /* SegueCoordinatorTests.swift in Sources */,
+				E691D638213D2C80008A3B2E /* XCTestExtensions.swift in Sources */,
+				E691D63A213D2CEE008A3B2E /* ViewController.swift in Sources */,
 				E691D61F213D2AE2008A3B2E /* MHDependencyKitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -268,7 +303,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -325,7 +360,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -339,9 +374,11 @@
 		E691D625213D2AE2008A3B2E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -354,7 +391,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.elders.MHDependencyKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -363,9 +402,11 @@
 		E691D626213D2AE2008A3B2E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -378,6 +419,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.elders.MHDependencyKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -387,6 +429,7 @@
 		E691D628213D2AE2008A3B2E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MHDependencyKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -404,6 +447,7 @@
 		E691D629213D2AE2008A3B2E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MHDependencyKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

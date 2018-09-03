@@ -91,10 +91,7 @@
 			children = (
 				E691D613213D2AE2008A3B2E /* MHDependencyKit.h */,
 				E691D633213D2C12008A3B2E /* MHDependencyKit.swift */,
-				E691D62B213D2BFD008A3B2E /* SegueCoordinator.swift */,
-				E691D62C213D2BFD008A3B2E /* UIViewController+SegueCoordinator.h */,
-				E691D62D213D2BFD008A3B2E /* UIViewController+SegueCoordinator.m */,
-				E691D62E213D2BFD008A3B2E /* UIViewController+SegueCoordinator.swift */,
+				E691D63B213D2D4F008A3B2E /* Legacy */,
 				E691D614213D2AE2008A3B2E /* Info.plist */,
 			);
 			path = MHDependencyKit;
@@ -110,6 +107,17 @@
 				E691D620213D2AE2008A3B2E /* Info.plist */,
 			);
 			path = MHDependencyKitTests;
+			sourceTree = "<group>";
+		};
+		E691D63B213D2D4F008A3B2E /* Legacy */ = {
+			isa = PBXGroup;
+			children = (
+				E691D62B213D2BFD008A3B2E /* SegueCoordinator.swift */,
+				E691D62C213D2BFD008A3B2E /* UIViewController+SegueCoordinator.h */,
+				E691D62D213D2BFD008A3B2E /* UIViewController+SegueCoordinator.m */,
+				E691D62E213D2BFD008A3B2E /* UIViewController+SegueCoordinator.swift */,
+			);
+			path = Legacy;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

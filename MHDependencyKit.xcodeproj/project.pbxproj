@@ -7,17 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E68D6BE2217DFE240081C8A6 /* UIStoryboardSegueDependencyResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68D6BE1217DFE240081C8A6 /* UIStoryboardSegueDependencyResolver.swift */; };
+		E68D6BE7217DFFB80081C8A6 /* UIViewController+DependencyCoordinator.h in Headers */ = {isa = PBXBuildFile; fileRef = E68D6BE5217DFFB80081C8A6 /* UIViewController+DependencyCoordinator.h */; };
+		E68D6BE8217DFFB80081C8A6 /* UIViewController+DependencyCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = E68D6BE6217DFFB80081C8A6 /* UIViewController+DependencyCoordinator.m */; };
+		E68D6BEA217E00230081C8A6 /* UIViewController+DependencyCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68D6BE9217E00230081C8A6 /* UIViewController+DependencyCoordinator.swift */; };
+		E68D6BEC217E07000081C8A6 /* DependencyCoordinator+UIStoryboardSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68D6BEB217E07000081C8A6 /* DependencyCoordinator+UIStoryboardSegue.swift */; };
+		E68D6BEE217E0CF60081C8A6 /* UIStoryboardSegueDependencyResolverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68D6BED217E0CF60081C8A6 /* UIStoryboardSegueDependencyResolverTests.swift */; };
+		E68F12592165019E00386FF5 /* DependencyResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6908BEB216413DF00E196C9 /* DependencyResolver.swift */; };
+		E68F125A2165019E00386FF5 /* AnyDependencyResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6908BED216413F000E196C9 /* AnyDependencyResolver.swift */; };
+		E68F125B2165019E00386FF5 /* AnyConsumerDependencyResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6908BEF2164193400E196C9 /* AnyConsumerDependencyResolver.swift */; };
+		E68F125C2165019E00386FF5 /* UIViewControllerDependencyResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68F12492164C70600386FF5 /* UIViewControllerDependencyResolver.swift */; };
+		E68F125E2165351D00386FF5 /* UIViewControllerConsumerDependencyResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68F125D2165351D00386FF5 /* UIViewControllerConsumerDependencyResolver.swift */; };
+		E68F12602165359100386FF5 /* ConsumerDependencyResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68F125F2165359100386FF5 /* ConsumerDependencyResolver.swift */; };
+		E68F126221653AC700386FF5 /* UIViewController+Lookup.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68F126121653AC700386FF5 /* UIViewController+Lookup.swift */; };
+		E68F126421654F7200386FF5 /* ConsumerDependencyResolverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68F126321654F7200386FF5 /* ConsumerDependencyResolverTests.swift */; };
+		E68F12662165565300386FF5 /* UIViewControllerDependencyResolverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68F12652165565300386FF5 /* UIViewControllerDependencyResolverTests.swift */; };
+		E68F12682165565F00386FF5 /* UIViewControllerConsumerDependencyResolverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68F12672165565F00386FF5 /* UIViewControllerConsumerDependencyResolverTests.swift */; };
+		E68F126A2165575E00386FF5 /* UIViewControllerContextDependencyResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68F12692165575E00386FF5 /* UIViewControllerContextDependencyResolver.swift */; };
+		E68F126C2165599B00386FF5 /* UIViewControllerContextDependencyResolverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68F126B2165599B00386FF5 /* UIViewControllerContextDependencyResolverTests.swift */; };
+		E6908BF221641EF000E196C9 /* DependencyResolverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6908BF121641EF000E196C9 /* DependencyResolverTests.swift */; };
+		E6908BF42164229E00E196C9 /* DependencyCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6908BF32164229E00E196C9 /* DependencyCoordinatorTests.swift */; };
 		E691D61A213D2AE2008A3B2E /* MHDependencyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E691D610213D2AE2008A3B2E /* MHDependencyKit.framework */; };
 		E691D61F213D2AE2008A3B2E /* MHDependencyKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E691D61E213D2AE2008A3B2E /* MHDependencyKitTests.swift */; };
 		E691D621213D2AE2008A3B2E /* MHDependencyKit.h in Headers */ = {isa = PBXBuildFile; fileRef = E691D613213D2AE2008A3B2E /* MHDependencyKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E691D62F213D2BFD008A3B2E /* SegueCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E691D62B213D2BFD008A3B2E /* SegueCoordinator.swift */; };
-		E691D630213D2BFD008A3B2E /* UIViewController+SegueCoordinator.h in Headers */ = {isa = PBXBuildFile; fileRef = E691D62C213D2BFD008A3B2E /* UIViewController+SegueCoordinator.h */; };
-		E691D631213D2BFD008A3B2E /* UIViewController+SegueCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = E691D62D213D2BFD008A3B2E /* UIViewController+SegueCoordinator.m */; };
-		E691D632213D2BFD008A3B2E /* UIViewController+SegueCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E691D62E213D2BFD008A3B2E /* UIViewController+SegueCoordinator.swift */; };
 		E691D634213D2C12008A3B2E /* MHDependencyKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E691D633213D2C12008A3B2E /* MHDependencyKit.swift */; };
-		E691D636213D2C5F008A3B2E /* SegueCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E691D635213D2C5F008A3B2E /* SegueCoordinatorTests.swift */; };
 		E691D638213D2C80008A3B2E /* XCTestExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E691D637213D2C7F008A3B2E /* XCTestExtensions.swift */; };
 		E691D63A213D2CEE008A3B2E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E691D639213D2CEE008A3B2E /* ViewController.swift */; };
+		E691D63D213D2DDC008A3B2E /* DependencyCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E691D63C213D2DDC008A3B2E /* DependencyCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +47,26 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E68D6BE1217DFE240081C8A6 /* UIStoryboardSegueDependencyResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboardSegueDependencyResolver.swift; sourceTree = "<group>"; };
+		E68D6BE5217DFFB80081C8A6 /* UIViewController+DependencyCoordinator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+DependencyCoordinator.h"; sourceTree = "<group>"; };
+		E68D6BE6217DFFB80081C8A6 /* UIViewController+DependencyCoordinator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+DependencyCoordinator.m"; sourceTree = "<group>"; };
+		E68D6BE9217E00230081C8A6 /* UIViewController+DependencyCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+DependencyCoordinator.swift"; sourceTree = "<group>"; };
+		E68D6BEB217E07000081C8A6 /* DependencyCoordinator+UIStoryboardSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DependencyCoordinator+UIStoryboardSegue.swift"; sourceTree = "<group>"; };
+		E68D6BED217E0CF60081C8A6 /* UIStoryboardSegueDependencyResolverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboardSegueDependencyResolverTests.swift; sourceTree = "<group>"; };
+		E68F12492164C70600386FF5 /* UIViewControllerDependencyResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerDependencyResolver.swift; sourceTree = "<group>"; };
+		E68F125D2165351D00386FF5 /* UIViewControllerConsumerDependencyResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerConsumerDependencyResolver.swift; sourceTree = "<group>"; };
+		E68F125F2165359100386FF5 /* ConsumerDependencyResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumerDependencyResolver.swift; sourceTree = "<group>"; };
+		E68F126121653AC700386FF5 /* UIViewController+Lookup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Lookup.swift"; sourceTree = "<group>"; };
+		E68F126321654F7200386FF5 /* ConsumerDependencyResolverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumerDependencyResolverTests.swift; sourceTree = "<group>"; };
+		E68F12652165565300386FF5 /* UIViewControllerDependencyResolverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerDependencyResolverTests.swift; sourceTree = "<group>"; };
+		E68F12672165565F00386FF5 /* UIViewControllerConsumerDependencyResolverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerConsumerDependencyResolverTests.swift; sourceTree = "<group>"; };
+		E68F12692165575E00386FF5 /* UIViewControllerContextDependencyResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerContextDependencyResolver.swift; sourceTree = "<group>"; };
+		E68F126B2165599B00386FF5 /* UIViewControllerContextDependencyResolverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerContextDependencyResolverTests.swift; sourceTree = "<group>"; };
+		E6908BEB216413DF00E196C9 /* DependencyResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyResolver.swift; sourceTree = "<group>"; };
+		E6908BED216413F000E196C9 /* AnyDependencyResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyDependencyResolver.swift; sourceTree = "<group>"; };
+		E6908BEF2164193400E196C9 /* AnyConsumerDependencyResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyConsumerDependencyResolver.swift; sourceTree = "<group>"; };
+		E6908BF121641EF000E196C9 /* DependencyResolverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyResolverTests.swift; sourceTree = "<group>"; };
+		E6908BF32164229E00E196C9 /* DependencyCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyCoordinatorTests.swift; sourceTree = "<group>"; };
 		E691D610213D2AE2008A3B2E /* MHDependencyKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MHDependencyKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E691D613213D2AE2008A3B2E /* MHDependencyKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MHDependencyKit.h; sourceTree = "<group>"; };
 		E691D614213D2AE2008A3B2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -46,6 +82,7 @@
 		E691D635213D2C5F008A3B2E /* SegueCoordinatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueCoordinatorTests.swift; sourceTree = "<group>"; };
 		E691D637213D2C7F008A3B2E /* XCTestExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestExtensions.swift; sourceTree = "<group>"; };
 		E691D639213D2CEE008A3B2E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E691D63C213D2DDC008A3B2E /* DependencyCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +104,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E68D6BE3217DFF830081C8A6 /* Resolvers */ = {
+			isa = PBXGroup;
+			children = (
+				E68F12492164C70600386FF5 /* UIViewControllerDependencyResolver.swift */,
+				E68F125D2165351D00386FF5 /* UIViewControllerConsumerDependencyResolver.swift */,
+				E68F12692165575E00386FF5 /* UIViewControllerContextDependencyResolver.swift */,
+				E68D6BE1217DFE240081C8A6 /* UIStoryboardSegueDependencyResolver.swift */,
+			);
+			path = Resolvers;
+			sourceTree = "<group>";
+		};
+		E68D6BE4217DFF980081C8A6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E68F126121653AC700386FF5 /* UIViewController+Lookup.swift */,
+				E68D6BE5217DFFB80081C8A6 /* UIViewController+DependencyCoordinator.h */,
+				E68D6BE6217DFFB80081C8A6 /* UIViewController+DependencyCoordinator.m */,
+				E68D6BE9217E00230081C8A6 /* UIViewController+DependencyCoordinator.swift */,
+				E68D6BEB217E07000081C8A6 /* DependencyCoordinator+UIStoryboardSegue.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E68F12452164C61100386FF5 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				E691D63C213D2DDC008A3B2E /* DependencyCoordinator.swift */,
+				E6908BEB216413DF00E196C9 /* DependencyResolver.swift */,
+				E6908BED216413F000E196C9 /* AnyDependencyResolver.swift */,
+				E68F125F2165359100386FF5 /* ConsumerDependencyResolver.swift */,
+				E6908BEF2164193400E196C9 /* AnyConsumerDependencyResolver.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		E68F12462164C63300386FF5 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				E68D6BE3217DFF830081C8A6 /* Resolvers */,
+				E68D6BE4217DFF980081C8A6 /* Extensions */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
 		E691D606213D2AE2008A3B2E = {
 			isa = PBXGroup;
 			children = (
@@ -91,7 +172,8 @@
 			children = (
 				E691D613213D2AE2008A3B2E /* MHDependencyKit.h */,
 				E691D633213D2C12008A3B2E /* MHDependencyKit.swift */,
-				E691D63C213D2DDC008A3B2E /* DependencyCoordinator.swift */,
+				E68F12452164C61100386FF5 /* Core */,
+				E68F12462164C63300386FF5 /* UIKit */,
 				E691D63B213D2D4F008A3B2E /* Legacy */,
 				E691D614213D2AE2008A3B2E /* Info.plist */,
 			);
@@ -105,6 +187,13 @@
 				E691D61E213D2AE2008A3B2E /* MHDependencyKitTests.swift */,
 				E691D635213D2C5F008A3B2E /* SegueCoordinatorTests.swift */,
 				E691D639213D2CEE008A3B2E /* ViewController.swift */,
+				E6908BF121641EF000E196C9 /* DependencyResolverTests.swift */,
+				E68F126321654F7200386FF5 /* ConsumerDependencyResolverTests.swift */,
+				E68F12652165565300386FF5 /* UIViewControllerDependencyResolverTests.swift */,
+				E68F12672165565F00386FF5 /* UIViewControllerConsumerDependencyResolverTests.swift */,
+				E68F126B2165599B00386FF5 /* UIViewControllerContextDependencyResolverTests.swift */,
+				E68D6BED217E0CF60081C8A6 /* UIStoryboardSegueDependencyResolverTests.swift */,
+				E6908BF32164229E00E196C9 /* DependencyCoordinatorTests.swift */,
 				E691D620213D2AE2008A3B2E /* Info.plist */,
 			);
 			path = MHDependencyKitTests;
@@ -128,7 +217,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E691D630213D2BFD008A3B2E /* UIViewController+SegueCoordinator.h in Headers */,
+				E68D6BE7217DFFB80081C8A6 /* UIViewController+DependencyCoordinator.h in Headers */,
 				E691D621213D2AE2008A3B2E /* MHDependencyKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -232,10 +321,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E68F125A2165019E00386FF5 /* AnyDependencyResolver.swift in Sources */,
+				E68F12602165359100386FF5 /* ConsumerDependencyResolver.swift in Sources */,
+				E68D6BEA217E00230081C8A6 /* UIViewController+DependencyCoordinator.swift in Sources */,
+				E68F126A2165575E00386FF5 /* UIViewControllerContextDependencyResolver.swift in Sources */,
+				E68D6BE2217DFE240081C8A6 /* UIStoryboardSegueDependencyResolver.swift in Sources */,
+				E68D6BE8217DFFB80081C8A6 /* UIViewController+DependencyCoordinator.m in Sources */,
+				E68F126221653AC700386FF5 /* UIViewController+Lookup.swift in Sources */,
+				E68F125C2165019E00386FF5 /* UIViewControllerDependencyResolver.swift in Sources */,
 				E691D634213D2C12008A3B2E /* MHDependencyKit.swift in Sources */,
-				E691D62F213D2BFD008A3B2E /* SegueCoordinator.swift in Sources */,
-				E691D632213D2BFD008A3B2E /* UIViewController+SegueCoordinator.swift in Sources */,
-				E691D631213D2BFD008A3B2E /* UIViewController+SegueCoordinator.m in Sources */,
+				E68F125B2165019E00386FF5 /* AnyConsumerDependencyResolver.swift in Sources */,
+				E68F125E2165351D00386FF5 /* UIViewControllerConsumerDependencyResolver.swift in Sources */,
+				E68D6BEC217E07000081C8A6 /* DependencyCoordinator+UIStoryboardSegue.swift in Sources */,
+				E68F12592165019E00386FF5 /* DependencyResolver.swift in Sources */,
+				E691D63D213D2DDC008A3B2E /* DependencyCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,10 +342,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E691D636213D2C5F008A3B2E /* SegueCoordinatorTests.swift in Sources */,
+				E68F12662165565300386FF5 /* UIViewControllerDependencyResolverTests.swift in Sources */,
 				E691D638213D2C80008A3B2E /* XCTestExtensions.swift in Sources */,
+				E6908BF42164229E00E196C9 /* DependencyCoordinatorTests.swift in Sources */,
+				E68F12682165565F00386FF5 /* UIViewControllerConsumerDependencyResolverTests.swift in Sources */,
+				E68D6BEE217E0CF60081C8A6 /* UIStoryboardSegueDependencyResolverTests.swift in Sources */,
+				E6908BF221641EF000E196C9 /* DependencyResolverTests.swift in Sources */,
+				E68F126421654F7200386FF5 /* ConsumerDependencyResolverTests.swift in Sources */,
 				E691D63A213D2CEE008A3B2E /* ViewController.swift in Sources */,
 				E691D61F213D2AE2008A3B2E /* MHDependencyKitTests.swift in Sources */,
+				E68F126C2165599B00386FF5 /* UIViewControllerContextDependencyResolverTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

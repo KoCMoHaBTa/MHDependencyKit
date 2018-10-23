@@ -74,12 +74,7 @@
 		E691D61E213D2AE2008A3B2E /* MHDependencyKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MHDependencyKitTests.swift; sourceTree = "<group>"; };
 		E691D620213D2AE2008A3B2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E691D62A213D2B0E008A3B2E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		E691D62B213D2BFD008A3B2E /* SegueCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueCoordinator.swift; sourceTree = "<group>"; };
-		E691D62C213D2BFD008A3B2E /* UIViewController+SegueCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+SegueCoordinator.h"; sourceTree = "<group>"; };
-		E691D62D213D2BFD008A3B2E /* UIViewController+SegueCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+SegueCoordinator.m"; sourceTree = "<group>"; };
-		E691D62E213D2BFD008A3B2E /* UIViewController+SegueCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+SegueCoordinator.swift"; sourceTree = "<group>"; };
 		E691D633213D2C12008A3B2E /* MHDependencyKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MHDependencyKit.swift; sourceTree = "<group>"; };
-		E691D635213D2C5F008A3B2E /* SegueCoordinatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueCoordinatorTests.swift; sourceTree = "<group>"; };
 		E691D637213D2C7F008A3B2E /* XCTestExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestExtensions.swift; sourceTree = "<group>"; };
 		E691D639213D2CEE008A3B2E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E691D63C213D2DDC008A3B2E /* DependencyCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyCoordinator.swift; sourceTree = "<group>"; };
@@ -174,7 +169,6 @@
 				E691D633213D2C12008A3B2E /* MHDependencyKit.swift */,
 				E68F12452164C61100386FF5 /* Core */,
 				E68F12462164C63300386FF5 /* UIKit */,
-				E691D63B213D2D4F008A3B2E /* Legacy */,
 				E691D614213D2AE2008A3B2E /* Info.plist */,
 			);
 			path = MHDependencyKit;
@@ -185,7 +179,6 @@
 			children = (
 				E691D637213D2C7F008A3B2E /* XCTestExtensions.swift */,
 				E691D61E213D2AE2008A3B2E /* MHDependencyKitTests.swift */,
-				E691D635213D2C5F008A3B2E /* SegueCoordinatorTests.swift */,
 				E691D639213D2CEE008A3B2E /* ViewController.swift */,
 				E6908BF121641EF000E196C9 /* DependencyResolverTests.swift */,
 				E68F126321654F7200386FF5 /* ConsumerDependencyResolverTests.swift */,
@@ -197,17 +190,6 @@
 				E691D620213D2AE2008A3B2E /* Info.plist */,
 			);
 			path = MHDependencyKitTests;
-			sourceTree = "<group>";
-		};
-		E691D63B213D2D4F008A3B2E /* Legacy */ = {
-			isa = PBXGroup;
-			children = (
-				E691D62B213D2BFD008A3B2E /* SegueCoordinator.swift */,
-				E691D62C213D2BFD008A3B2E /* UIViewController+SegueCoordinator.h */,
-				E691D62D213D2BFD008A3B2E /* UIViewController+SegueCoordinator.m */,
-				E691D62E213D2BFD008A3B2E /* UIViewController+SegueCoordinator.swift */,
-			);
-			path = Legacy;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

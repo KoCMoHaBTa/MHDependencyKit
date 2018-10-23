@@ -47,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E678F2F0217F47BE00FE9AF1 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		E68D6BE1217DFE240081C8A6 /* UIStoryboardSegueDependencyResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboardSegueDependencyResolver.swift; sourceTree = "<group>"; };
 		E68D6BE5217DFFB80081C8A6 /* UIViewController+DependencyCoordinator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+DependencyCoordinator.h"; sourceTree = "<group>"; };
 		E68D6BE6217DFFB80081C8A6 /* UIViewController+DependencyCoordinator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+DependencyCoordinator.m"; sourceTree = "<group>"; };
@@ -147,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				E691D62A213D2B0E008A3B2E /* README.md */,
+				E678F2F0217F47BE00FE9AF1 /* LICENSE */,
 				E691D612213D2AE2008A3B2E /* MHDependencyKit */,
 				E691D61D213D2AE2008A3B2E /* MHDependencyKitTests */,
 				E691D611213D2AE2008A3B2E /* Products */,

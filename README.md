@@ -1,5 +1,7 @@
 #  MHDependencyKit
 
+[![Build Status](https://app.bitrise.io/app/960ddc82f9c41a2d/status.svg?token=b-p9ilqSddTTaN13e4YYOw&branch=master)](https://app.bitrise.io/app/960ddc82f9c41a2d)
+
 **MHDependencyKit** is lightweight library that helps resolves dependencies between objects in a workflow manner. 
 
 Its goal is to solve the complexity of resolving dependencies and data transfer between UIViewController transitions.

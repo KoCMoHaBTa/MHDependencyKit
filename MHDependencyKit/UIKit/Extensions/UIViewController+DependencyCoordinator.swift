@@ -69,7 +69,7 @@ extension UIViewController {
     }
 
     ///Performs a segue by providing a single one time context handler for setting up dependencies from a given source to a given destination
-    public func performSegue<Source, Destination>(withIdentifier identifier: String, sender: Any?, contextHandler: @escaping (Source, Destination) -> Void) where Source: UIViewController, Destination: UIViewController {
+    private func _performSegue<Source, Destination>(withIdentifier identifier: String, sender: Any?, contextHandler: @escaping (Source, Destination) -> Void) {
 
         self.performSegue(withIdentifier: identifier, sender: sender) { (coordinator) in
             
@@ -81,10 +81,33 @@ extension UIViewController {
             coordinator.register(dependencyResolver: UIViewControllerContextDependencyResolver(handler: { (source: Source, destination: Destination) in
                 
                 contextHandler(source, destination)
-                destination.temporaryDependencyCoordinator = nil
+                (destination as? UIViewController)?.temporaryDependencyCoordinator = nil
             }))
         }
     }
+    
+    ///Performs a segue by providing a single one time context handler for setting up dependencies from a given source to a given destination
+    public func performSegue<Source, Destination>(withIdentifier identifier: String, sender: Any?, contextHandler: @escaping (Source, Destination) -> Void) {
+        
+        self._performSegue(withIdentifier: identifier, sender: sender, contextHandler: contextHandler)
+    }
+    
+    ///Performs a segue by providing a single one time context handler for setting up dependencies from a given source to a given destination
+    public func performSegue<Source, Destination>(withIdentifier identifier: String, sender: Any?, contextHandler: @escaping (Source, Destination) -> Void) where Source: UIViewController {
+        
+        self._performSegue(withIdentifier: identifier, sender: sender, contextHandler: contextHandler)
+    }
+    
+    ///Performs a segue by providing a single one time context handler for setting up dependencies from a given source to a given destination
+    public func performSegue<Source, Destination>(withIdentifier identifier: String, sender: Any?, contextHandler: @escaping (Source, Destination) -> Void) where Destination: UIViewController {
+        
+        self._performSegue(withIdentifier: identifier, sender: sender, contextHandler: contextHandler)
+    }
+    
+    ///Performs a segue by providing a single one time context handler for setting up dependencies from a given source to a given destination
+    public func performSegue<Source, Destination>(withIdentifier identifier: String, sender: Any?, contextHandler: @escaping (Source, Destination) -> Void) where Source: UIViewController, Destination: UIViewController {
+        
+        self._performSegue(withIdentifier: identifier, sender: sender, contextHandler: contextHandler)
+    }
 }
-
 

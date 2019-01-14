@@ -19,6 +19,12 @@ public final class UIViewControllerContextDependencyResolver<Source, Destination
         self.handler = handler
     }
     
+    ///This is used to be called from extensions below
+    fileprivate init(theHandler handler: @escaping (Source, Destination) -> Void) {
+        
+        self.handler = handler
+    }
+    
     //MARK: - DependencyResolver
     
     public typealias Provider = UIViewController
@@ -46,5 +52,29 @@ public final class UIViewControllerContextDependencyResolver<Source, Destination
             }
             
         }).resolveDependencies(from: source, to: destination)
+    }
+}
+
+extension UIViewControllerContextDependencyResolver where Source: UIViewController, Destination: UIViewController {
+    
+    public convenience init(handler: @escaping (Source, Destination) -> Void) {
+        
+        self.init(theHandler: handler)
+    }
+}
+
+extension UIViewControllerContextDependencyResolver where Source: UIViewController {
+    
+    public convenience init(handler: @escaping (Source, Destination) -> Void) {
+        
+        self.init(theHandler: handler)
+    }
+}
+
+extension UIViewControllerContextDependencyResolver where Destination: UIViewController {
+    
+    public convenience init(handler: @escaping (Source, Destination) -> Void) {
+        
+        self.init(theHandler: handler)
     }
 }

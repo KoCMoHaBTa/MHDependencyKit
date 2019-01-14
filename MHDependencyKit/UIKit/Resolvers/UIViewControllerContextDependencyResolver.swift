@@ -8,7 +8,7 @@
 
 import Foundation
 
-public final class UIViewControllerContextDependencyResolver<Source: UIViewController, Destination: UIViewController>: DependencyResolver {
+public final class UIViewControllerContextDependencyResolver<Source, Destination>: DependencyResolver {
     
     private let handler: (Source, Destination) -> Void
     

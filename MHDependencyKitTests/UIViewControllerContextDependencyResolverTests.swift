@@ -164,4 +164,45 @@ class UIViewControllerContextDependencyResolverTests: XCTestCase {
             destinations[4].prepare(usingDependencyCoordinatorFromSender: nil, toSegue: UIStoryboardSegue(identifier: "test5", source: destinations[4], destination: destinations[5]))
         }
     }
+    
+    func testProtocolsUsage() {
+        
+        let resolver = UIViewControllerContextDependencyResolver { (source: TestConfigurable, destination: TestConfigurable) in
+            
+            destination.data = source.data
+        }
+        
+        class TC: UIViewController, TestConfigurable {
+            
+            var data: String?
+            
+            convenience init(data: String?) {
+                
+                self.init()
+                self.data = data
+            }
+        }
+        
+        let tc1 = TC(data: "tc1")
+        let tc2 = TC(data: "tc2")
+        let tc3 = TC(data: "tc3")
+        
+        resolver.resolveDependencies(from: UIViewController(), to: UITabBarController())
+        resolver.resolveDependencies(from: tc1, to: UITabBarController())
+        resolver.resolveDependencies(from: UIViewController(), to: UITabBarController())
+        resolver.resolveDependencies(from: UIViewController(), to: UITabBarController())
+        resolver.resolveDependencies(from: UIViewController(), to: tc2)
+        resolver.resolveDependencies(from: UIViewController(), to: UITabBarController())
+        resolver.resolveDependencies(from: UIViewController(), to: UITabBarController())
+        resolver.resolveDependencies(from: UIViewController(), to: UITabBarController())
+        resolver.resolveDependencies(from: tc2, to: tc3)
+        XCTAssertEqual(tc1.data, "tc1")
+        XCTAssertEqual(tc2.data, "tc1")
+        XCTAssertEqual(tc3.data, "tc1")
+    }
+}
+
+private protocol TestConfigurable: class {
+    
+    var data: String? { get set }
 }

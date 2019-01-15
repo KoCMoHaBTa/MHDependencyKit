@@ -21,7 +21,7 @@ In its core, the abstraction is not limited to UIKit, so its possible to define 
 
 All examples below will be with view controllers, however you are not limited to use view controlers.
 
-The most value of this library comes from [Automatic dependency resolution with Storyboard Segues and context depdendencies](#Automatic_dependency_resolution_with_Storyboard_Segues_and_context_depdendencies)
+The most value of this library comes from [Automatic dependency resolution with Storyboard Segues and context depdendencies](#automatic-dependency-resolution-with-storyboard-segues-and-context-depdendencies)
 
 ### Registering dependencies
 

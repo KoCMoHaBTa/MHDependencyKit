@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E62349C321EE10D800AFB0BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62349C221EE10D800AFB0BA /* AppDelegate.swift */; };
+		E62349C521EE10D800AFB0BA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62349C421EE10D800AFB0BA /* ViewController.swift */; };
+		E62349C821EE10D800AFB0BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E62349C621EE10D800AFB0BA /* Main.storyboard */; };
+		E62349CA21EE10DA00AFB0BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E62349C921EE10DA00AFB0BA /* Assets.xcassets */; };
+		E62349CD21EE10DA00AFB0BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E62349CB21EE10DA00AFB0BA /* LaunchScreen.storyboard */; };
 		E68D6BE2217DFE240081C8A6 /* UIStoryboardSegueDependencyResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68D6BE1217DFE240081C8A6 /* UIStoryboardSegueDependencyResolver.swift */; };
 		E68D6BE7217DFFB80081C8A6 /* UIViewController+DependencyCoordinator.h in Headers */ = {isa = PBXBuildFile; fileRef = E68D6BE5217DFFB80081C8A6 /* UIViewController+DependencyCoordinator.h */; };
 		E68D6BE8217DFFB80081C8A6 /* UIViewController+DependencyCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = E68D6BE6217DFFB80081C8A6 /* UIViewController+DependencyCoordinator.m */; };
@@ -47,6 +52,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E62349C021EE10D800AFB0BA /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E62349C221EE10D800AFB0BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E62349C421EE10D800AFB0BA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E62349C721EE10D800AFB0BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E62349C921EE10DA00AFB0BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E62349CC21EE10DA00AFB0BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E62349CE21EE10DA00AFB0BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E678F2F0217F47BE00FE9AF1 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		E68D6BE1217DFE240081C8A6 /* UIStoryboardSegueDependencyResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboardSegueDependencyResolver.swift; sourceTree = "<group>"; };
 		E68D6BE5217DFFB80081C8A6 /* UIViewController+DependencyCoordinator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+DependencyCoordinator.h"; sourceTree = "<group>"; };
@@ -82,6 +94,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		E62349BD21EE10D800AFB0BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E691D60C213D2AE2008A3B2E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -100,6 +119,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E62349C121EE10D800AFB0BA /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				E62349C221EE10D800AFB0BA /* AppDelegate.swift */,
+				E62349C421EE10D800AFB0BA /* ViewController.swift */,
+				E62349C621EE10D800AFB0BA /* Main.storyboard */,
+				E62349C921EE10DA00AFB0BA /* Assets.xcassets */,
+				E62349CB21EE10DA00AFB0BA /* LaunchScreen.storyboard */,
+				E62349CE21EE10DA00AFB0BA /* Info.plist */,
+			);
+			path = Example;
+			sourceTree = "<group>";
+		};
 		E68D6BE3217DFF830081C8A6 /* Resolvers */ = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +183,7 @@
 				E678F2F0217F47BE00FE9AF1 /* LICENSE */,
 				E691D612213D2AE2008A3B2E /* MHDependencyKit */,
 				E691D61D213D2AE2008A3B2E /* MHDependencyKitTests */,
+				E62349C121EE10D800AFB0BA /* Example */,
 				E691D611213D2AE2008A3B2E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -160,6 +193,7 @@
 			children = (
 				E691D610213D2AE2008A3B2E /* MHDependencyKit.framework */,
 				E691D619213D2AE2008A3B2E /* MHDependencyKitTests.xctest */,
+				E62349C021EE10D800AFB0BA /* Example.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -209,6 +243,23 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		E62349BF21EE10D800AFB0BA /* Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E62349D121EE10DA00AFB0BA /* Build configuration list for PBXNativeTarget "Example" */;
+			buildPhases = (
+				E62349BC21EE10D800AFB0BA /* Sources */,
+				E62349BD21EE10D800AFB0BA /* Frameworks */,
+				E62349BE21EE10D800AFB0BA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Example;
+			productName = Example;
+			productReference = E62349C021EE10D800AFB0BA /* Example.app */;
+			productType = "com.apple.product-type.application";
+		};
 		E691D60F213D2AE2008A3B2E /* MHDependencyKit */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E691D624213D2AE2008A3B2E /* Build configuration list for PBXNativeTarget "MHDependencyKit" */;
@@ -251,10 +302,13 @@
 		E691D607213D2AE2008A3B2E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0940;
+				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = KoCMoHaBTa;
 				TargetAttributes = {
+					E62349BF21EE10D800AFB0BA = {
+						CreatedOnToolsVersion = 10.1;
+					};
 					E691D60F213D2AE2008A3B2E = {
 						CreatedOnToolsVersion = 9.4.1;
 						LastSwiftMigration = 1000;
@@ -271,6 +325,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = E691D606213D2AE2008A3B2E;
 			productRefGroup = E691D611213D2AE2008A3B2E /* Products */;
@@ -279,11 +334,22 @@
 			targets = (
 				E691D60F213D2AE2008A3B2E /* MHDependencyKit */,
 				E691D618213D2AE2008A3B2E /* MHDependencyKitTests */,
+				E62349BF21EE10D800AFB0BA /* Example */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		E62349BE21EE10D800AFB0BA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E62349CD21EE10DA00AFB0BA /* LaunchScreen.storyboard in Resources */,
+				E62349CA21EE10DA00AFB0BA /* Assets.xcassets in Resources */,
+				E62349C821EE10D800AFB0BA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E691D60E213D2AE2008A3B2E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -301,6 +367,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		E62349BC21EE10D800AFB0BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E62349C521EE10D800AFB0BA /* ViewController.swift in Sources */,
+				E62349C321EE10D800AFB0BA /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E691D60B213D2AE2008A3B2E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -349,7 +424,65 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		E62349C621EE10D800AFB0BA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E62349C721EE10D800AFB0BA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E62349CB21EE10DA00AFB0BA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E62349CC21EE10DA00AFB0BA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		E62349CF21EE10DA00AFB0BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Example/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.KoCMoHaBTa.MHDependencyKit.Example;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E62349D021EE10DA00AFB0BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Example/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.KoCMoHaBTa.MHDependencyKit.Example;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		E691D622213D2AE2008A3B2E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -564,6 +697,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		E62349D121EE10DA00AFB0BA /* Build configuration list for PBXNativeTarget "Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E62349CF21EE10DA00AFB0BA /* Debug */,
+				E62349D021EE10DA00AFB0BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		E691D60A213D2AE2008A3B2E /* Build configuration list for PBXProject "MHDependencyKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

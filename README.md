@@ -17,6 +17,15 @@ In its core, the abstraction is not limited to UIKit, so its possible to define 
 - **UIViewControllerContextDependencyResolver** - a resolver between 2 view controllers, no matter at what point they appear in the app
 - **UIStoryboardSegueDependencyResolver** - a resolver for a given storyboard instance
 
+## Installation
+
+[embedding]:
+https://developer.apple.com/library/content/technotes/tn2435/_index.html#//apple_ref/doc/uid/DTS40017543-CH1-PROJ_CONFIG-APPS_WITH_MULTIPLE_XCODE_PROJECTS
+
+- using [Carthage](https://github.com/Carthage/Carthage) by adding `github "KoCMoHaBTa/MHDependencyKit" "master"` to your `Cartfile`
+- by [downloading](https://github.com/KoCMoHaBTa/MHDependencyKit/archive/master.zip) and [embedding] the framework directly into your project
+- using [submodules](http://git-scm.com/docs/git-submodule) and [embedding] the framework directly into your project
+
 ## How to (with examples)
 
 All examples below will be with view controllers, however you are not limited to use view controlers.
@@ -26,6 +35,7 @@ The most value of this library comes from [Automatic dependency resolution with 
 ### Registering dependencies
 
 You can resolve dependencies between any 2 concrete types of view controller by specifying them as source and destination.
+Its a good place to put these into your app's entry point, eg. `AppDelegate`.
 
 ```
 //1 
@@ -49,7 +59,7 @@ coordinator.register(dependencyResolver: resolver)
 
 ### Using configurable protocols
 
-Specifying concrete types is easy and fast, however if you have a comples UI and workflow with a lot of types - you might end up with endless combinations of them.
+Specifying concrete types is easy and fast, however if you have a complex UI and workflow with a lot of types - you might end up with endless combinations of them.
 
 A more generic approach is to use configurable protocols for common dependencies.
 
@@ -60,24 +70,36 @@ protocol ContactIDConfigurable: class {
 }
 
 //2
-let coordinator = DependencyCoordinator.default
+class MyViewController: ContactIDConfigurable {
+    
+    var contactID: String?
+}
+
+class MyOtherViewController: ContactIDConfigurable {
+
+    var contactID: String?
+}
 
 //3
+let coordinator = DependencyCoordinator.default
+
+//4
 let resolver = UIViewControllerContextDependencyResolver { (source: ContactIDConfigurable, destination: ContactIDConfigurable) in
 
-	//4
+	//5
     destination.contactID = source.contactID
 }
 
-//5
+//6
 coordinator.register(dependencyResolver: resolver)
 ```
 
 1. Pretty often we have to transfer a specific contact id, so we define a configurable protocol to represent that dependency
-2. There is default shared instance of **DependencyCoordinator**, that we are going to use, however you are not limited to it.
-3. Create an instance of a dependncy resolver of your choice. Make sure to specify source and destination types as the configurable protocol
-4. Resolve the depndencies between the 2 objects
-5. Registers the dependency resolver with the coordinator
+2. Conform your custom view controllers to the configurable protocol
+3. There is default shared instance of **DependencyCoordinator**, that we are going to use, however you are not limited to it.
+4. Create an instance of a dependncy resolver of your choice. Make sure to specify source and destination types as the configurable protocol
+5. Resolve the depndencies between the 2 objects
+6. Registers the dependency resolver with the coordinator
 
 Using this approach will allow to define single registration for common dependencies between screens. 
 
@@ -111,7 +133,7 @@ class MyViewController: UIViewController {
 }
 ```
 
-1. We are located in a custom view controller with and example action, triggered by a tap from the UI
+1. We are located in a custom view controller with an example action, triggered by a tap from the UI
 2. We perform a custom segue by using one of the new extension methods that allow us to provide a closure that resolve the destination dependencies
 3. We set the title of the destination
 

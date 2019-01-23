@@ -19,12 +19,24 @@ In its core, the abstraction is not limited to UIKit, so its possible to define 
 
 ## Installation
 
-[embedding]:
+[Embed]:
 https://developer.apple.com/library/content/technotes/tn2435/_index.html#//apple_ref/doc/uid/DTS40017543-CH1-PROJ_CONFIG-APPS_WITH_MULTIPLE_XCODE_PROJECTS
 
-- using [Carthage](https://github.com/Carthage/Carthage) by adding `github "KoCMoHaBTa/MHDependencyKit" "master"` to your `Cartfile`
-- by [downloading](https://github.com/KoCMoHaBTa/MHDependencyKit/archive/master.zip) and [embedding] the framework directly into your project
-- using [submodules](http://git-scm.com/docs/git-submodule) and [embedding] the framework directly into your project
+#### [Carthage](https://github.com/Carthage/Carthage)
+
+Add `github "KoCMoHaBTa/MHDependencyKit"` to your `Cartfile`, then [Embed] the framework directly into your project.
+
+#### [Cocoapods](https://cocoapods.org)
+
+Add `pod 'MHDependencyKit'` to your  `Podfile`
+
+#### [Submodules](http://git-scm.com/docs/git-submodule)
+
+[Add a submodule](https://git-scm.com/docs/git-submodule#git-submodule-add-bltbranchgt-f--force--nameltnamegt--referenceltrepositorygt--depthltdepthgt--ltrepositorygtltpathgt) to your repostiroy, then [Embed] the framework directly into your project
+
+#### Manually
+
+[Download](https://github.com/KoCMoHaBTa/MHDependencyKit/releases), then [Embed] the framework directly into your project
 
 ## How to (with examples)
 

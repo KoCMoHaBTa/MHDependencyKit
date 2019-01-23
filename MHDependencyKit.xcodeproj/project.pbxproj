@@ -59,6 +59,7 @@
 		E62349C921EE10DA00AFB0BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E62349CC21EE10DA00AFB0BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E62349CE21EE10DA00AFB0BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E627993921F8BD0B00BE252C /* MHDependencyKit.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = MHDependencyKit.podspec; sourceTree = "<group>"; };
 		E678F2F0217F47BE00FE9AF1 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		E68D6BE1217DFE240081C8A6 /* UIStoryboardSegueDependencyResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboardSegueDependencyResolver.swift; sourceTree = "<group>"; };
 		E68D6BE5217DFFB80081C8A6 /* UIViewController+DependencyCoordinator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+DependencyCoordinator.h"; sourceTree = "<group>"; };
@@ -181,6 +182,7 @@
 			children = (
 				E691D62A213D2B0E008A3B2E /* README.md */,
 				E678F2F0217F47BE00FE9AF1 /* LICENSE */,
+				E627993921F8BD0B00BE252C /* MHDependencyKit.podspec */,
 				E691D612213D2AE2008A3B2E /* MHDependencyKit */,
 				E691D61D213D2AE2008A3B2E /* MHDependencyKitTests */,
 				E62349C121EE10D800AFB0BA /* Example */,

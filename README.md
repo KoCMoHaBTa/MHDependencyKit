@@ -126,6 +126,14 @@ It is very convenient to use **UIViewControllerContextDependencyResolver** in th
 
 The only consideration you need to take care of is, if you override  UIViewController.prepare(for:sender:) - you must call super.
 
+#### Note
+Keep in mind that only one context can exist at time for every registered resolver. This means that once a new context begins (eg. the requirements for source are met) - the old context is cleared.
+This means that in the following case `X -> A(source 1) -> B -> C -> D(destination 1) -> E -> F(source 2) -> G`
+- a context will start at A(source 1), which is suppoed to end at D(destination 1)
+- once D isreached - the context will be resolved
+- at that point, up until E - if you go back - and then reach D again - it will still be resolved, because the context still exists.
+- if pass F(source 2) and reach to G - this will start a new context, so if you go back prior D - showing up D again will not resolve
+
 ### Storyboard Segues extensions
 
 Another very powerful extension to storyboards is the ability to perform a segue with inline one time dependency resolution, as following:

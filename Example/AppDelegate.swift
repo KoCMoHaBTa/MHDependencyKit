@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MHDependencyKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        DependencyCoordinator.default.setup()
+        
+        if let controller = self.window?.rootViewController {
+        
+            //resolves initial dependencies
+            DependencyCoordinator.default.resolveDependencies(to: controller)
+        }
+        
         return true
     }
 

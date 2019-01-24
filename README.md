@@ -15,6 +15,7 @@ In its core, the abstraction is not limited to UIKit, so its possible to define 
 - **UIViewControllerDependencyResolver** - a resolver between 2 view controlers, that appear directly one after another
 - **UIViewControllerConsumerDependencyResolver** - a resolver for a single view controller
 - **UIViewControllerContextDependencyResolver** - a resolver between 2 view controllers, no matter at what point they appear in the app
+- **UIViewControllerConsumerContextDependencyResolver** - a resolver from nothing (Void) to UIViewController, no matter when it appear in the workflow. Could be used to resolve initial dependencies from AppDelegate.
 - **UIStoryboardSegueDependencyResolver** - a resolver for a given storyboard instance
 
 ## Installation

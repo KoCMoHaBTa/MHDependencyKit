@@ -12,6 +12,17 @@
 		E62349C821EE10D800AFB0BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E62349C621EE10D800AFB0BA /* Main.storyboard */; };
 		E62349CA21EE10DA00AFB0BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E62349C921EE10DA00AFB0BA /* Assets.xcassets */; };
 		E62349CD21EE10DA00AFB0BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E62349CB21EE10DA00AFB0BA /* LaunchScreen.storyboard */; };
+		E627993B21F8BFFF00BE252C /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E627993A21F8BFFF00BE252C /* InputViewController.swift */; };
+		E627994721F8C53800BE252C /* TextInputConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E627994621F8C53800BE252C /* TextInputConfigurable.swift */; };
+		E627994921F8C57B00BE252C /* AppVersionConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E627994821F8C57B00BE252C /* AppVersionConfigurable.swift */; };
+		E627994C21F8C5CD00BE252C /* DependencyCoordinator+Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = E627994B21F8C5CD00BE252C /* DependencyCoordinator+Setup.swift */; };
+		E627994E21F8C5FF00BE252C /* TextDisplaConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E627994D21F8C5FF00BE252C /* TextDisplaConfigurable.swift */; };
+		E627995021F9AFC000BE252C /* TextDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E627994F21F9AFC000BE252C /* TextDisplayViewController.swift */; };
+		E627995621F9D4B900BE252C /* MHDependencyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E691D610213D2AE2008A3B2E /* MHDependencyKit.framework */; };
+		E627995721F9D4B900BE252C /* MHDependencyKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E691D610213D2AE2008A3B2E /* MHDependencyKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E627995C21F9DA1000BE252C /* UIViewControllerConsumerContextDependencyResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E627995B21F9DA1000BE252C /* UIViewControllerConsumerContextDependencyResolver.swift */; };
+		E627996021F9EA6000BE252C /* ContextTextDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E627995F21F9EA6000BE252C /* ContextTextDisplayViewController.swift */; };
+		E627996221F9EA8B00BE252C /* ContextTextDisplaConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E627996121F9EA8B00BE252C /* ContextTextDisplaConfigurable.swift */; };
 		E68D6BE2217DFE240081C8A6 /* UIStoryboardSegueDependencyResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68D6BE1217DFE240081C8A6 /* UIStoryboardSegueDependencyResolver.swift */; };
 		E68D6BE7217DFFB80081C8A6 /* UIViewController+DependencyCoordinator.h in Headers */ = {isa = PBXBuildFile; fileRef = E68D6BE5217DFFB80081C8A6 /* UIViewController+DependencyCoordinator.h */; };
 		E68D6BE8217DFFB80081C8A6 /* UIViewController+DependencyCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = E68D6BE6217DFFB80081C8A6 /* UIViewController+DependencyCoordinator.m */; };
@@ -42,6 +53,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		E627995821F9D4B900BE252C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E691D607213D2AE2008A3B2E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E691D60F213D2AE2008A3B2E;
+			remoteInfo = MHDependencyKit;
+		};
 		E691D61B213D2AE2008A3B2E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E691D607213D2AE2008A3B2E /* Project object */;
@@ -50,6 +68,20 @@
 			remoteInfo = MHDependencyKit;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E627995A21F9D4BA00BE252C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E627995721F9D4B900BE252C /* MHDependencyKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		E62349C021EE10D800AFB0BA /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,6 +92,15 @@
 		E62349CC21EE10DA00AFB0BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E62349CE21EE10DA00AFB0BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E627993921F8BD0B00BE252C /* MHDependencyKit.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = MHDependencyKit.podspec; sourceTree = "<group>"; };
+		E627993A21F8BFFF00BE252C /* InputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
+		E627994621F8C53800BE252C /* TextInputConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputConfigurable.swift; sourceTree = "<group>"; };
+		E627994821F8C57B00BE252C /* AppVersionConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersionConfigurable.swift; sourceTree = "<group>"; };
+		E627994B21F8C5CD00BE252C /* DependencyCoordinator+Setup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DependencyCoordinator+Setup.swift"; sourceTree = "<group>"; };
+		E627994D21F8C5FF00BE252C /* TextDisplaConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextDisplaConfigurable.swift; sourceTree = "<group>"; };
+		E627994F21F9AFC000BE252C /* TextDisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextDisplayViewController.swift; sourceTree = "<group>"; };
+		E627995B21F9DA1000BE252C /* UIViewControllerConsumerContextDependencyResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerConsumerContextDependencyResolver.swift; sourceTree = "<group>"; };
+		E627995F21F9EA6000BE252C /* ContextTextDisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextTextDisplayViewController.swift; sourceTree = "<group>"; };
+		E627996121F9EA8B00BE252C /* ContextTextDisplaConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextTextDisplaConfigurable.swift; sourceTree = "<group>"; };
 		E678F2F0217F47BE00FE9AF1 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		E68D6BE1217DFE240081C8A6 /* UIStoryboardSegueDependencyResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboardSegueDependencyResolver.swift; sourceTree = "<group>"; };
 		E68D6BE5217DFFB80081C8A6 /* UIViewController+DependencyCoordinator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+DependencyCoordinator.h"; sourceTree = "<group>"; };
@@ -99,6 +140,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E627995621F9D4B900BE252C /* MHDependencyKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,7 +166,9 @@
 			isa = PBXGroup;
 			children = (
 				E62349C221EE10D800AFB0BA /* AppDelegate.swift */,
-				E62349C421EE10D800AFB0BA /* ViewController.swift */,
+				E627994B21F8C5CD00BE252C /* DependencyCoordinator+Setup.swift */,
+				E627994A21F8C5A900BE252C /* Configurables */,
+				E627995121F9AFD500BE252C /* ViewControllers */,
 				E62349C621EE10D800AFB0BA /* Main.storyboard */,
 				E62349C921EE10DA00AFB0BA /* Assets.xcassets */,
 				E62349CB21EE10DA00AFB0BA /* LaunchScreen.storyboard */,
@@ -133,12 +177,35 @@
 			path = Example;
 			sourceTree = "<group>";
 		};
+		E627994A21F8C5A900BE252C /* Configurables */ = {
+			isa = PBXGroup;
+			children = (
+				E627994621F8C53800BE252C /* TextInputConfigurable.swift */,
+				E627994D21F8C5FF00BE252C /* TextDisplaConfigurable.swift */,
+				E627996121F9EA8B00BE252C /* ContextTextDisplaConfigurable.swift */,
+				E627994821F8C57B00BE252C /* AppVersionConfigurable.swift */,
+			);
+			path = Configurables;
+			sourceTree = "<group>";
+		};
+		E627995121F9AFD500BE252C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E62349C421EE10D800AFB0BA /* ViewController.swift */,
+				E627993A21F8BFFF00BE252C /* InputViewController.swift */,
+				E627994F21F9AFC000BE252C /* TextDisplayViewController.swift */,
+				E627995F21F9EA6000BE252C /* ContextTextDisplayViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		E68D6BE3217DFF830081C8A6 /* Resolvers */ = {
 			isa = PBXGroup;
 			children = (
 				E68F12492164C70600386FF5 /* UIViewControllerDependencyResolver.swift */,
 				E68F125D2165351D00386FF5 /* UIViewControllerConsumerDependencyResolver.swift */,
 				E68F12692165575E00386FF5 /* UIViewControllerContextDependencyResolver.swift */,
+				E627995B21F9DA1000BE252C /* UIViewControllerConsumerContextDependencyResolver.swift */,
 				E68D6BE1217DFE240081C8A6 /* UIStoryboardSegueDependencyResolver.swift */,
 			);
 			path = Resolvers;
@@ -252,10 +319,12 @@
 				E62349BC21EE10D800AFB0BA /* Sources */,
 				E62349BD21EE10D800AFB0BA /* Frameworks */,
 				E62349BE21EE10D800AFB0BA /* Resources */,
+				E627995A21F9D4BA00BE252C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				E627995921F9D4B900BE252C /* PBXTargetDependency */,
 			);
 			name = Example;
 			productName = Example;
@@ -373,8 +442,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E627994721F8C53800BE252C /* TextInputConfigurable.swift in Sources */,
+				E627993B21F8BFFF00BE252C /* InputViewController.swift in Sources */,
+				E627996221F9EA8B00BE252C /* ContextTextDisplaConfigurable.swift in Sources */,
+				E627996021F9EA6000BE252C /* ContextTextDisplayViewController.swift in Sources */,
 				E62349C521EE10D800AFB0BA /* ViewController.swift in Sources */,
+				E627994E21F8C5FF00BE252C /* TextDisplaConfigurable.swift in Sources */,
+				E627995021F9AFC000BE252C /* TextDisplayViewController.swift in Sources */,
 				E62349C321EE10D800AFB0BA /* AppDelegate.swift in Sources */,
+				E627994921F8C57B00BE252C /* AppVersionConfigurable.swift in Sources */,
+				E627994C21F8C5CD00BE252C /* DependencyCoordinator+Setup.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,6 +459,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E627995C21F9DA1000BE252C /* UIViewControllerConsumerContextDependencyResolver.swift in Sources */,
 				E68F125A2165019E00386FF5 /* AnyDependencyResolver.swift in Sources */,
 				E68F12602165359100386FF5 /* ConsumerDependencyResolver.swift in Sources */,
 				E68D6BEA217E00230081C8A6 /* UIViewController+DependencyCoordinator.swift in Sources */,
@@ -419,6 +497,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		E627995921F9D4B900BE252C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E691D60F213D2AE2008A3B2E /* MHDependencyKit */;
+			targetProxy = E627995821F9D4B900BE252C /* PBXContainerItemProxy */;
+		};
 		E691D61C213D2AE2008A3B2E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = E691D60F213D2AE2008A3B2E /* MHDependencyKit */;
@@ -449,6 +532,7 @@
 		E62349CF21EE10DA00AFB0BA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Example/Info.plist;
@@ -469,6 +553,7 @@
 		E62349D021EE10DA00AFB0BA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Example/Info.plist;
@@ -612,7 +697,6 @@
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -640,7 +724,6 @@
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";

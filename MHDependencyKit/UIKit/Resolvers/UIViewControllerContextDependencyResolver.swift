@@ -30,23 +30,29 @@ public final class UIViewControllerContextDependencyResolver<Source, Destination
     public typealias Provider = UIViewController
     public typealias Consumer = UIViewController
     
-    //holds the reference to the last recognized source
-    private weak var source: AnyObject? = nil
+    //holds the reference to the last recognized sources
+    private var stack: [WeakReferenceWrapper<AnyObject>] = [] {
+        
+        didSet {
+            
+            self.stack = self.stack.filter({ $0.reference != nil })
+        }
+    }
     
     public func resolveDependencies(from source: Provider, to destination: Consumer) {
         
         //resolve the source
         UIViewControllerDependencyResolver(handler: { [weak self] (source: Source, _) in
             
-            self?.source = source as AnyObject
+            self?.stack.append(.init(reference: source as AnyObject))
             
         }).resolveDependencies(from: source, to: destination)
         
         //resolve the destination
         UIViewControllerDependencyResolver(handler: { [weak self] (_, destination: Destination) in
             
-            if let source = self?.source as? Source {
-                
+            if let source = self?.stack.last(where: { $0.reference is Source })?.reference as? Source {
+
                 //if source matches - call the handler
                 self?.handler(source, destination)
             }

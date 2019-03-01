@@ -50,6 +50,7 @@
 		E691D638213D2C80008A3B2E /* XCTestExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E691D637213D2C7F008A3B2E /* XCTestExtensions.swift */; };
 		E691D63A213D2CEE008A3B2E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E691D639213D2CEE008A3B2E /* ViewController.swift */; };
 		E691D63D213D2DDC008A3B2E /* DependencyCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E691D63C213D2DDC008A3B2E /* DependencyCoordinator.swift */; };
+		E6DA206E222978C300DB24FA /* WeakReferenceWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DA206D222978C300DB24FA /* WeakReferenceWrapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,6 +134,7 @@
 		E691D637213D2C7F008A3B2E /* XCTestExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestExtensions.swift; sourceTree = "<group>"; };
 		E691D639213D2CEE008A3B2E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E691D63C213D2DDC008A3B2E /* DependencyCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyCoordinator.swift; sourceTree = "<group>"; };
+		E6DA206D222978C300DB24FA /* WeakReferenceWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakReferenceWrapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,6 +233,7 @@
 				E6908BED216413F000E196C9 /* AnyDependencyResolver.swift */,
 				E68F125F2165359100386FF5 /* ConsumerDependencyResolver.swift */,
 				E6908BEF2164193400E196C9 /* AnyConsumerDependencyResolver.swift */,
+				E6DA206D222978C300DB24FA /* WeakReferenceWrapper.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -472,6 +475,7 @@
 				E68F125B2165019E00386FF5 /* AnyConsumerDependencyResolver.swift in Sources */,
 				E68F125E2165351D00386FF5 /* UIViewControllerConsumerDependencyResolver.swift in Sources */,
 				E68D6BEC217E07000081C8A6 /* DependencyCoordinator+UIStoryboardSegue.swift in Sources */,
+				E6DA206E222978C300DB24FA /* WeakReferenceWrapper.swift in Sources */,
 				E68F12592165019E00386FF5 /* DependencyResolver.swift in Sources */,
 				E691D63D213D2DDC008A3B2E /* DependencyCoordinator.swift in Sources */,
 			);

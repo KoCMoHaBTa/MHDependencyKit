@@ -200,6 +200,83 @@ class UIViewControllerContextDependencyResolverTests: XCTestCase {
         XCTAssertEqual(tc2.data, "tc1")
         XCTAssertEqual(tc3.data, "tc1")
     }
+    
+    func testContextLooseLinear() {
+        
+        let resolver = UIViewControllerContextDependencyResolver { (source: TestConfigurable, destination: TestConfigurable) in
+            
+            destination.data = source.data
+        }
+        
+        class TC: UIViewController, TestConfigurable {
+            
+            var data: String?
+            
+            convenience init(data: String?) {
+                
+                self.init()
+                self.data = data
+            }
+        }
+        
+        let tc1: TC! = TC(data: "tc1")
+        var tc2: TC! = TC(data: nil)
+        let tc3: UIViewController! = UIViewController()
+        let tc4: UIViewController! = UIViewController()
+        let tc5 = TC(data: nil)
+        
+        resolver.resolveDependencies(from: tc1, to: tc2!)
+        resolver.resolveDependencies(from: tc2, to: tc3!)
+        resolver.resolveDependencies(from: tc3, to: tc4)
+        tc2 = nil
+        resolver.resolveDependencies(from: tc4, to: tc5)
+        
+        XCTAssertEqual(tc5.data, "tc1")
+    }
+    
+    func testContextLooseBranches() {
+        
+        let resolver = UIViewControllerContextDependencyResolver { (source: TestConfigurable, destination: TestConfigurable) in
+            
+            destination.data = source.data
+        }
+        
+        class TC: UIViewController, TestConfigurable {
+            
+            var data: String?
+            
+            convenience init(data: String?) {
+                
+                self.init()
+                self.data = data
+            }
+        }
+        
+        let root = TC(data: "tc1")
+        
+        var branch1: TC! = TC(data: nil)
+        let branch1_1: UIViewController! = UIViewController()
+        let branch1_2: UIViewController! = UIViewController()
+        
+        let branch2: UIViewController! = UIViewController()
+        let branch2_2 = TC(data: nil)
+        
+        //resolve root to branch 1 and 2
+        resolver.resolveDependencies(from: root, to: branch1)
+        resolver.resolveDependencies(from: root, to: branch2)
+        
+        //dig into branch 1
+        resolver.resolveDependencies(from: branch1, to: branch1_1)
+        resolver.resolveDependencies(from: branch1_1, to: branch1_2)
+        
+        //close branch 1
+        branch1 = nil
+        
+        //dig into branch 2
+        resolver.resolveDependencies(from: branch2, to: branch2_2)
+        
+        XCTAssertEqual(branch2_2.data, "tc1")
+    }
 }
 
 private protocol TestConfigurable: class {

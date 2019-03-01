@@ -64,23 +64,3 @@ public final class UIViewControllerConsumerContextDependencyResolver<Destination
         }).resolveDependencies(to: destination)
     }
 }
-
-private class WeakReferenceWrapper<T: AnyObject> {
-    
-    weak var reference: T?
-    
-    init(reference: T) {
-        
-        self.reference = reference
-    }
-    
-    func isTheSameReference(as object: T) -> Bool {
-
-        guard let reference = self.reference else {
-
-            return false
-        }
-
-        return reference === object
-    }
-}

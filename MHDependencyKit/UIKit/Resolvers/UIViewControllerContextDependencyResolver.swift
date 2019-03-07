@@ -35,7 +35,16 @@ public final class UIViewControllerContextDependencyResolver<Source, Destination
         
         didSet {
             
-            self.stack = self.stack.filter({ $0.reference != nil })
+            //remove nil references and duplicates
+            self.stack = self.stack.reduce(into: [], { (result, element) in
+                
+                guard element.reference != nil && result.contains(where: { $0.isTheSameReference(as: element.reference!) }) == false else {
+                    
+                    return
+                }
+                
+                result.append(element)
+            })
         }
     }
     

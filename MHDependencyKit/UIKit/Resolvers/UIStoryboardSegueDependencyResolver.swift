@@ -19,19 +19,6 @@ public struct UIStoryboardSegueDependencyResolver<Sender>: DependencyResolver {
         
         self.handler = handler
     }
-
-    public init<Source: UIViewController, Destination: UIViewController>(handler: @escaping (Sender, String?, Source, Destination) -> Void) {
-        
-        self.handler = { (sender, segue) in
-            
-            let identifier = segue.identifier
-            UIViewControllerDependencyResolver(handler: { (source: Source, destination: Destination) in
-                
-                handler(sender, identifier, source, destination)
-                
-            }).resolveDependencies(from: segue.source, to: segue.destination)
-        }
-    }
     
     //MARK: - DependencyResolver
     
@@ -52,5 +39,42 @@ extension UIStoryboardSegueDependencyResolver where Sender == Void {
             
             handler(segue)
         }
+    }
+}
+
+extension UIStoryboardSegueDependencyResolver {
+    
+    ///This is used to be called from extensions below
+    private init<Source, Destination>(theHandler handler: @escaping (Sender, String?, Source, Destination) -> Void) {
+        
+        self.handler = { (sender, segue) in
+            
+            let identifier = segue.identifier
+            UIViewControllerDependencyResolver(handler: { (source: Source, destination: Destination) in
+                
+                handler(sender, identifier, source, destination)
+                
+            }).resolveDependencies(from: segue.source, to: segue.destination)
+        }
+    }
+    
+    public init<Source, Destination>(handler: @escaping (Sender, String?, Source, Destination) -> Void) {
+        
+        self.init(theHandler: handler)
+    }
+    
+    public init<Source, Destination: UIViewController>(handler: @escaping (Sender, String?, Source, Destination) -> Void) {
+        
+        self.init(theHandler: handler)
+    }
+    
+    public init<Source: UIViewController, Destination>(handler: @escaping (Sender, String?, Source, Destination) -> Void) {
+        
+        self.init(theHandler: handler)
+    }
+    
+    public init<Source: UIViewController, Destination: UIViewController>(handler: @escaping (Sender, String?, Source, Destination) -> Void) {
+        
+        self.init(theHandler: handler)
     }
 }

@@ -80,4 +80,22 @@ class UIStoryboardSegueDependencyResolverTests: XCTestCase {
             coordinator.resolveDependencies(fromSender: nil, to: UIStoryboardSegue(identifier: "7", source: UIViewController(), destination: UIViewController()))
         }
     }
+    
+    func testWithExpandedSegue() {
+        
+        self.performExpectation { (e) in
+            
+            e.expectedFulfillmentCount = 1
+            
+            let coordinator = DependencyCoordinator()
+            
+            coordinator.register(dependencyResolver: UIStoryboardSegueDependencyResolver(handler: { (sender: Any, id, source, destination: UITableViewController) in
+                
+                e.fulfill()
+            }))
+            
+            coordinator.resolveDependencies(fromSender: nil, to: UIStoryboardSegue(identifier: "7", source: UIViewController(), destination: UIViewController()))
+            coordinator.resolveDependencies(fromSender: nil, to: UIStoryboardSegue(identifier: "7", source: UIViewController(), destination: UITableViewController()))
+        }
+    }
 }

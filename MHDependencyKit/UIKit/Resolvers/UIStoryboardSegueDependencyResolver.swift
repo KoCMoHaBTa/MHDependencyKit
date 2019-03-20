@@ -19,8 +19,19 @@ public struct UIStoryboardSegueDependencyResolver<Sender>: DependencyResolver {
         
         self.handler = handler
     }
-    
-    //TODO: Consider adding overload with exploded segue -> (sender, id, source, destination)
+
+    public init<Source: UIViewController, Destination: UIViewController>(handler: @escaping (Sender, String?, Source, Destination) -> Void) {
+        
+        self.handler = { (sender, segue) in
+            
+            let identifier = segue.identifier
+            UIViewControllerDependencyResolver(handler: { (source: Source, destination: Destination) in
+                
+                handler(sender, identifier, source, destination)
+                
+            }).resolveDependencies(from: segue.source, to: segue.destination)
+        }
+    }
     
     //MARK: - DependencyResolver
     

@@ -29,7 +29,7 @@ open class DependencyCoordinator {
     ///The underlaying storage of all prepare handlers
     fileprivate var dependencyResolvers: [AnyDependencyResolver] = []
     
-    ///A SegueCoordinator can be composed of multiple childs
+    ///A DependencyCoordinator can be composed of multiple childs
     open var childCoordinators: [DependencyCoordinator] = []
     
     ///A value that can be used by the client to store custom data
@@ -43,7 +43,7 @@ open class DependencyCoordinator {
 
 extension DependencyCoordinator {
     
-    ///A default shared instance of SegueCoordinator
+    ///A default shared instance of DependencyCoordinator
     public static let `default` = DependencyCoordinator()
 }
 

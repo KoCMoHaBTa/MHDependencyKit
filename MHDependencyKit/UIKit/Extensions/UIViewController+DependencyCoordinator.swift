@@ -49,7 +49,7 @@ extension UIViewController {
 
 extension UIViewController {
     
-    ///Calls `self.segueCoordinator.prepare(for: segue, sender: sender)`. This method is used for objc compatibility
+    ///Calls `self.dependencyCoordinator.prepare(for: segue, sender: sender)`. This method is used for objc compatibility
     @objc open dynamic func prepare(usingDependencyCoordinatorFromSender sender: Any?, toSegue segue: UIStoryboardSegue) {
         
         self.dependencyCoordinator.resolveDependencies(fromSender: sender, to: segue)
@@ -58,7 +58,7 @@ extension UIViewController {
     }
     
     //ZAGREI - this conflicts with legacy implementation - enable it at the end, when legacy is scapped
-    ///Performs a segue by providing a prepare handler for setting up a one time usable temporray SegueCoordinator
+    ///Performs a segue by providing a prepare handler for setting up a one time usable temporray DependencyCoordinator
     public func performSegue(withIdentifier identifier: String, sender: Any?, prepareHandler: (DependencyCoordinator) -> Void) {
 
         let temporaryDependencyCoordinator = DependencyCoordinator()

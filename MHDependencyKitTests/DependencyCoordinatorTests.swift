@@ -91,7 +91,7 @@ class DependencyCoordinatorTests: XCTestCase {
         }
     }
     
-    func testTemporarySegueCoordinatorPrepareSegue() {
+    func testTemporaryDependencyCoordinatorPrepareSegue() {
         
         self.performExpectation { (e) in
             
@@ -116,7 +116,7 @@ class DependencyCoordinatorTests: XCTestCase {
         }
     }
     
-    func testTemporarySegueCoordinatorWithContextHandlers() {
+    func testTemporaryDependencyCoordinatorWithContextHandlers() {
         
         self.performExpectation { (e) in
             

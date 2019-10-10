@@ -26,6 +26,17 @@ extension UIViewController {
             objc_setAssociatedObject(self, &UIViewController.dependencyCoordinatorKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
+    
+    ///Resolve the dependencies from the receiver to a given destination, usually the next view controller that will be shown
+    open func resolveDependencies<T>(to destination: T) {
+        
+        self.dependencyCoordinator.resolveDependencies(from: self, to: destination)
+    }
+    
+    open func resolveDependencies(fromSender sender: Any?, to segue: UIStoryboardSegue) {
+        
+        self.dependencyCoordinator.resolveDependencies(fromSender: sender, to: segue)
+    }
 }
 
 extension UIViewController {
@@ -52,7 +63,7 @@ extension UIViewController {
     ///Calls `self.dependencyCoordinator.prepare(for: segue, sender: sender)`. This method is used for objc compatibility
     @objc open dynamic func prepare(usingDependencyCoordinatorFromSender sender: Any?, toSegue segue: UIStoryboardSegue) {
         
-        self.dependencyCoordinator.resolveDependencies(fromSender: sender, to: segue)
+        self.resolveDependencies(fromSender: sender, to: segue)
         self.temporaryDependencyCoordinator?.resolveDependencies(fromSender: sender, to: segue)
         self.temporaryDependencyCoordinator = nil
     }

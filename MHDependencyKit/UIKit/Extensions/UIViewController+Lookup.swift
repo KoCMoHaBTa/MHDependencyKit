@@ -20,7 +20,13 @@ extension UIViewController {
             result.append(controller)
         }
         
-        for child in self.children {
+        var children = self.children
+        if let self = self as? UITabBarController, let viewControllers = self.viewControllers {
+            
+            children = viewControllers
+        }
+        
+        for child in children {
             
             let matches = child.lookupAll(of: type)
             result.append(contentsOf: matches)

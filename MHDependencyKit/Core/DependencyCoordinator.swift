@@ -24,10 +24,12 @@ import Foundation
  
  */
 
-open class DependencyCoordinator {
+open class DependencyCoordinator: Identifiable {
+    
+    open var id: String = NSUUID().uuidString
     
     ///The underlaying storage of all prepare handlers
-    fileprivate var dependencyResolvers: [AnyDependencyResolver] = []
+    fileprivate(set) var dependencyResolvers: [AnyDependencyResolver] = []
     
     ///A DependencyCoordinator can be composed of multiple childs
     open var childCoordinators: [DependencyCoordinator] = []
@@ -38,6 +40,14 @@ open class DependencyCoordinator {
     public init() {
         
         
+    }
+}
+
+extension DependencyCoordinator: Equatable {
+    
+    public static func ==(lhs: DependencyCoordinator, rhs: DependencyCoordinator) -> Bool {
+        
+        return lhs.id == rhs.id
     }
 }
 

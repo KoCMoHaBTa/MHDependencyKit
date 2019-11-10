@@ -182,4 +182,34 @@ class UIViewControllerDependencyResolverTests: XCTestCase {
             coordinator.resolveDependencies(from: UIViewController(), to: tab)
         }
     }
+    
+    //When using UIViewControllerDependencyResolver
+    //    - the dependency coordinator should always be transfered from the source to the destination, no matter if the resolver is successful or not
+    func testPreservingOfDependencyCoordinator() {
+        
+        let resolver = UIViewControllerDependencyResolver(handler: { (source: UITableViewController, destionation: UICollectionViewController) in
+            
+        })
+        
+        let coordinator = DependencyCoordinator()
+        coordinator.register(dependencyResolver: resolver)
+        
+        let root = UIViewController()
+        root.dependencyCoordinator = coordinator
+        
+        //resolve using the convenioence controller function
+        let vc1 = UIViewController()
+        root.resolveDependencies(to: vc1)
+        XCTAssertEqual(vc1.dependencyCoordinator, coordinator)
+        
+        //resolve using the coordinator
+        let vc2 = UIPageViewController()
+        coordinator.resolveDependencies(from: vc1, to: vc2)
+        XCTAssertEqual(vc2.dependencyCoordinator, coordinator)
+        
+        let vc3 = UINavigationController(rootViewController: UITableViewController())
+        resolver.resolveDependencies(from: vc2, to: vc3)
+        XCTAssertEqual(vc3.dependencyCoordinator, coordinator)
+        XCTAssertEqual(vc3.viewControllers.first?.dependencyCoordinator, coordinator)
+    }
 }

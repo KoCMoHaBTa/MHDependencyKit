@@ -28,6 +28,7 @@ public struct UIViewControllerDependencyResolver<Source, Destination>: Dependenc
     public func resolveDependencies(from source: Provider, to destination: Consumer) {
 
         destination.dependencyCoordinator = source.dependencyCoordinator
+        destination.allChildViewControllers.forEach({ $0.dependencyCoordinator = source.dependencyCoordinator })
         
         guard let source = source.lookupFirst(of: Source.self) else {
 

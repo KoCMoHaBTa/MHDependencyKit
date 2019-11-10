@@ -277,6 +277,47 @@ class UIViewControllerContextDependencyResolverTests: XCTestCase {
         
         XCTAssertEqual(branch2_2.data, "tc1")
     }
+    
+    //When using UIViewControllerContextDependencyResolver
+    //  - and we change the coordinator in between
+    //  - the chnaged dependency coordinator should be preserved from the changed to the destination and all intermediate view controllers
+    //  eg. VC1(DC1) -> VC2(DC1) -> VC3(DC1 -> DC2) -> VC4(DC2) -> VC5(DC2)
+    //                           -> VC6(DC1)
+    func testPreservingOfDependencyCoordinator() {
+        
+        let dc1 = DependencyCoordinator()
+        let dc2 = DependencyCoordinator()
+        
+        let resolver = UIViewControllerContextDependencyResolver { (source: UITableViewController, destination: UICollectionViewController) in
+            
+        }
+        
+        let vc1 = UIViewController()
+        vc1.dependencyCoordinator = dc1
+        
+        let vc2 = UIViewController()
+        resolver.resolveDependencies(from: vc1, to: vc2)
+        XCTAssertEqual(vc2.dependencyCoordinator, dc1)
+        
+        let vc3 = UIViewController()
+        resolver.resolveDependencies(from: vc2, to: vc3)
+        XCTAssertEqual(vc3.dependencyCoordinator, dc1)
+        
+        vc3.dependencyCoordinator = dc2
+        XCTAssertEqual(vc3.dependencyCoordinator, dc2)
+        
+        let vc4 = UIViewController()
+        resolver.resolveDependencies(from: vc3, to: vc4)
+        XCTAssertEqual(vc4.dependencyCoordinator, dc2)
+        
+        let vc5 = UIViewController()
+        resolver.resolveDependencies(from: vc4, to: vc5)
+        XCTAssertEqual(vc5.dependencyCoordinator, dc2)
+        
+        let vc6 = UIViewController()
+        resolver.resolveDependencies(from: vc2, to: vc6)
+        XCTAssertEqual(vc6.dependencyCoordinator, dc1)
+    }
 }
 
 private protocol TestConfigurable: class {

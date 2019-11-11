@@ -25,10 +25,11 @@ extension UIViewController {
         
         set {
                         
-            self.dependencyCoordinator.childCoordinators.removeAll(where: { $0.id == Self.temporaryDependencyCoordinatorID })
+            newValue?.removeFromParent()
 
             if let newValue = newValue {
 
+                self.dependencyCoordinator.removeChild(newValue)
                 newValue.id = Self.temporaryDependencyCoordinatorID
                 self.dependencyCoordinator.childCoordinators.append(newValue)
             }

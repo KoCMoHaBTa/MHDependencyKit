@@ -32,7 +32,17 @@ open class DependencyCoordinator: Identifiable {
     fileprivate(set) var dependencyResolvers: [AnyDependencyResolver] = []
     
     ///A DependencyCoordinator can be composed of multiple childs
-    open var childCoordinators: [DependencyCoordinator] = []
+    open var childCoordinators: [DependencyCoordinator] = [] {
+        
+        didSet {
+            
+            //associate the children with their parent
+            self.childCoordinators.forEach({ $0.parentCoordinator = self })
+        }
+    }
+    
+    ///If the receiver is composed - this is the parent reference
+    open weak var parentCoordinator: DependencyCoordinator?
     
     ///A value that can be used by the client to store custom data
     open var userInfo: Any? = nil
@@ -40,6 +50,28 @@ open class DependencyCoordinator: Identifiable {
     public init() {
         
         
+    }
+}
+
+extension DependencyCoordinator {
+    
+    open func addChild(_ coordinator: DependencyCoordinator) {
+        
+        self.childCoordinators.append(coordinator)
+    }
+    
+    open func removeChild(_ coordinator: DependencyCoordinator) {
+        
+        self.childCoordinators.removeAll { (child) -> Bool in
+            
+            child.removeChild(coordinator)
+            return child == coordinator
+        }
+    }
+    
+    open func removeFromParent() {
+        
+        self.parentCoordinator?.removeChild(self)
     }
 }
 

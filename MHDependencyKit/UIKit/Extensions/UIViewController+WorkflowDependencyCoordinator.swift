@@ -19,6 +19,7 @@ extension UIViewController {
         setupHandler(workflowDependencyCoordinator)
         workflowDependencyCoordinator.childCoordinators.append(self.dependencyCoordinator)
         self.dependencyCoordinator = workflowDependencyCoordinator
+        self.allChildViewControllers.forEach({ $0.dependencyCoordinator = workflowDependencyCoordinator })
     }
     
     ///Creates a new dependency coordinator, configured with the provided setupHandler, and associate it with the next destination for which dependencies are resolved. If there is an existing dependency coordinator - it is assigned as a child of the new one.

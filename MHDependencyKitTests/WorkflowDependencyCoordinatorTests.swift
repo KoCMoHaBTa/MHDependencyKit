@@ -346,6 +346,26 @@ class WorkflowDependencyCoordinatorTests: XCTestCase {
         }
     }
     
+    func testContainerTransferOfWorkfldows() {
+        
+        let vc = UIViewController()
+        let vcdc = DependencyCoordinator()
+        vc.dependencyCoordinator = vcdc
+        
+        let nav = UINavigationController(rootViewController: vc)
+        let navdc = DependencyCoordinator()
+        nav.dependencyCoordinator = navdc
+        
+        var wdc: DependencyCoordinator?
+        nav.setupWorkflowDependencyCoordinator { (workflowDependencyCoordinator) in
+            
+            wdc = workflowDependencyCoordinator
+        }
+        
+        XCTAssertEqual(nav.dependencyCoordinator, wdc)
+        XCTAssertEqual(vc.dependencyCoordinator, wdc)
+    }
+    
     //NOTE: Should investigate if these test cases are valind in the future
 //    func testMultipleContextDestinationsEGTabBarControllerWithWorkflowDependencyCoordinator() {
 //

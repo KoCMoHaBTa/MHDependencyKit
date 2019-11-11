@@ -287,6 +287,65 @@ class WorkflowDependencyCoordinatorTests: XCTestCase {
         }
     }
     
+    func testTemporaryAndWorkflowCoordinatorCompositionWhenGoingBackAndForward() {
+        
+        self.performExpectation { (e) in
+            
+            e.expectedFulfillmentCount = 4
+            
+            let root = UIViewController()
+            let rootDependencyCoordinator = DependencyCoordinator()
+            rootDependencyCoordinator.register(dependencyResolver: UIViewControllerContextDependencyResolver(handler: { (s, d) in
+                //just to transfer the coordinators
+            }))
+            root.dependencyCoordinator = rootDependencyCoordinator
+            
+            XCTAssertEqual(root.dependencyCoordinator.kind, .custom)
+            XCTAssertEqual(root.dependencyCoordinator.childCoordinators.count, 0)
+            
+            //iteration 1
+            root.registerTemporaryContextDependencyResolver { (source, destination) in
+                
+                //this shold be called 2 times - 1 for UINavigationController and 1 for UIViewController
+                e.fulfill()
+                
+                destination.setupWorkflowDependencyCoordinator { (workflowCoordiantor) in
+
+                }
+            }
+            
+            XCTAssertEqual(root.dependencyCoordinator.kind, .custom)
+            XCTAssertEqual(root.dependencyCoordinator.childCoordinators.count, 1)
+            
+            root.resolveDependencies(to: UINavigationController(rootViewController: UIViewController()))
+            
+            XCTAssertEqual(root.dependencyCoordinator.kind, .custom)
+            XCTAssertEqual(root.dependencyCoordinator.childCoordinators.count, 0)
+            
+            
+            
+            
+            //iteration 2
+            root.registerTemporaryContextDependencyResolver { (source, destination) in
+                
+                //this shold be called 2 times - 1 for UINavigationController and 1 for UIViewController
+                e.fulfill()
+                
+                destination.setupWorkflowDependencyCoordinator { (workflowCoordiantor) in
+                    
+                }
+            }
+            
+            XCTAssertEqual(root.dependencyCoordinator.kind, .custom)
+            XCTAssertEqual(root.dependencyCoordinator.childCoordinators.count, 1)
+            
+            root.resolveDependencies(to: UINavigationController(rootViewController: UIViewController()))
+            
+            XCTAssertEqual(root.dependencyCoordinator.kind, .custom)
+            XCTAssertEqual(root.dependencyCoordinator.childCoordinators.count, 0)
+        }
+    }
+    
     //NOTE: Should investigate if these test cases are valind in the future
 //    func testMultipleContextDestinationsEGTabBarControllerWithWorkflowDependencyCoordinator() {
 //

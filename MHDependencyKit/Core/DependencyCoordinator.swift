@@ -47,6 +47,22 @@ open class DependencyCoordinator: Identifiable {
     ///A value that can be used by the client to store custom data
     open var userInfo: Any? = nil
     
+    //Defines the internal kind of the dependency coordinator
+    enum Kind {
+        
+        case `default`      //used for the default shared coordinator
+        case custom         //used for any instance of the coordinator, made by the user
+        case temporary      //used for temporary coordinators
+        case workflow       //used for workflow coordinators
+    }
+    
+    var kind: Kind = .custom
+    
+    init(kind: Kind) {
+        
+        self.kind = kind
+    }
+    
     public init() {
         
         
@@ -62,10 +78,15 @@ extension DependencyCoordinator {
     
     open func removeChild(_ coordinator: DependencyCoordinator) {
         
+        self.removeChild(withID: coordinator.id)
+    }
+    
+    open func removeChild(withID id: DependencyCoordinator.ID) {
+        
         self.childCoordinators.removeAll { (child) -> Bool in
             
-            child.removeChild(coordinator)
-            return child == coordinator
+            child.removeChild(withID: id)
+            return child.id == id
         }
     }
     
@@ -86,7 +107,7 @@ extension DependencyCoordinator: Equatable {
 extension DependencyCoordinator {
     
     ///A default shared instance of DependencyCoordinator
-    public static let `default` = DependencyCoordinator()
+    public static let `default` = DependencyCoordinator(kind: .default)
 }
 
 //MARK: - Combining all available resolve handlers from the coordinator's composition

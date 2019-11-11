@@ -15,7 +15,7 @@ extension UIViewController {
     ///- note: The workflow starts from the receiver
     open func setupWorkflowDependencyCoordinator(setupHandler: (DependencyCoordinator) -> Void) {
         
-        let workflowDependencyCoordinator = DependencyCoordinator()
+        let workflowDependencyCoordinator = DependencyCoordinator(kind: .workflow)
         setupHandler(workflowDependencyCoordinator)
         workflowDependencyCoordinator.childCoordinators.append(self.dependencyCoordinator)
         self.dependencyCoordinator = workflowDependencyCoordinator

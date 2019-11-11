@@ -43,7 +43,7 @@ extension UIViewController {
     @available(*, deprecated, message: "Use registerTemporaryContextDependencyResolver(handler:) instead")
     public func performSegue(withIdentifier identifier: String, sender: Any?, prepareHandler: (DependencyCoordinator) -> Void) {
         
-        let temporaryDependencyCoordinator = DependencyCoordinator()
+        let temporaryDependencyCoordinator = DependencyCoordinator(kind: .temporary)
         prepareHandler(temporaryDependencyCoordinator)
         self.temporaryDependencyCoordinator = temporaryDependencyCoordinator
     }
@@ -53,14 +53,14 @@ extension UIViewController {
     
     private func _registerTemporaryContextDependencyResolver<Source, Destination>(handler: @escaping (Source, Destination) -> Void) {
         
-        let temporaryDependencyCoordinator = DependencyCoordinator()
+        let temporaryDependencyCoordinator = DependencyCoordinator(kind: .temporary)
         let temporaryDependencyCoordinatorID = temporaryDependencyCoordinator.id
         self.dependencyCoordinator.childCoordinators.append(temporaryDependencyCoordinator)
         
         temporaryDependencyCoordinator.register(dependencyResolver: UIViewControllerContextDependencyResolver(handler: { (source: Source, destination: Destination) in
             
             handler(source, destination)
-            (destination as? UIViewController)?.dependencyCoordinator.childCoordinators.removeAll(where: { $0.id == temporaryDependencyCoordinatorID })
+            (destination as? UIViewController)?.dependencyCoordinator.removeChild(withID: temporaryDependencyCoordinatorID)
         }))
     }
     

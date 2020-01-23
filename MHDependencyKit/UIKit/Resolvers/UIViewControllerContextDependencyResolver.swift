@@ -50,8 +50,6 @@ public final class UIViewControllerContextDependencyResolver<Source, Destination
     
     public func resolveDependencies(from source: Provider, to destination: Consumer) {
         
-        print(self.debugDescription)
-        
         //resolve the source
         UIViewControllerDependencyResolver(handler: { [weak self] (source: Source, _) in
             

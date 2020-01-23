@@ -65,7 +65,6 @@ open class DependencyCoordinator: Identifiable {
     
     public init() {
         
-        
     }
 }
 
@@ -168,3 +167,20 @@ extension DependencyCoordinator {
         self.register(dependencyResolver: AnyDependencyResolver(other: dependencyResolver))
     }
 }
+
+//MARK: - Copying
+
+extension DependencyCoordinator {
+    
+    func copy(as kind: Kind? = nil) -> DependencyCoordinator {
+    
+        let copy = DependencyCoordinator()
+        copy.dependencyResolvers = self.dependencyResolvers.copy()
+        copy.childCoordinators = self.childCoordinators.map({ $0.copy() })
+        copy.userInfo = self.userInfo
+        copy.kind = kind ?? self.kind
+        
+        return copy
+    }
+}
+

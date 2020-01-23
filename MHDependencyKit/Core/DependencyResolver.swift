@@ -23,6 +23,17 @@ public protocol DependencyResolver {
     
     ///Resolves the depndencies from the provider to the consumer.
     func resolveDependencies(from provider: Provider, to consumer: Consumer)
+    
+    ///Creates a copy of the receiver. Default implementation returns the receiver itslef. 
+    func copy() -> Self
+}
+
+extension DependencyResolver {
+    
+    public func copy() -> Self {
+        
+        return self
+    }
 }
 
 extension Array: DependencyResolver where Element: DependencyResolver {
@@ -36,5 +47,10 @@ extension Array: DependencyResolver where Element: DependencyResolver {
             
             element.resolveDependencies(from: provider, to: consumer)
         }
+    }
+    
+    public func copy() -> Self {
+        
+        return self.map({ $0.copy() })
     }
 }

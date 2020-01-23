@@ -13,18 +13,17 @@ extension UIViewController {
     
     ///Creates a new dependency coordinator, configured with the provided setupHandler, and associate it with the receiver. If there is an existing dependency coordinator - it is assigned as a child of the new one.
     ///- note: The workflow starts from the receiver
-    open func setupWorkflowDependencyCoordinator(setupHandler: (DependencyCoordinator) -> Void) {
+    open func setupWorkflowDependencyCoordinator(setupHandler: ((DependencyCoordinator) -> Void)? = nil) {
         
-        let workflowDependencyCoordinator = DependencyCoordinator(kind: .workflow)
-        setupHandler(workflowDependencyCoordinator)
-        workflowDependencyCoordinator.childCoordinators.append(self.dependencyCoordinator)
+        let workflowDependencyCoordinator = self.dependencyCoordinator.copy(as: .workflow)
+        setupHandler?(workflowDependencyCoordinator)
         self.dependencyCoordinator = workflowDependencyCoordinator
         self.allChildViewControllers.forEach({ $0.dependencyCoordinator = workflowDependencyCoordinator })
     }
     
     ///Creates a new dependency coordinator, configured with the provided setupHandler, and associate it with the next destination for which dependencies are resolved. If there is an existing dependency coordinator - it is assigned as a child of the new one.
     ///- note: The workflow starts from the next destination for which dependencies are resolved.
-    open func setupDestinationWorkflowDependencyCoordinator(setupHandler: @escaping (DependencyCoordinator) -> Void) {
+    open func setupDestinationWorkflowDependencyCoordinator(setupHandler: ((DependencyCoordinator) -> Void)? = nil) {
         
         self.registerTemporaryContextDependencyResolver { (source, destination) in
 

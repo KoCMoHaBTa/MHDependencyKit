@@ -54,13 +54,12 @@ extension UIViewController {
     private func _registerTemporaryContextDependencyResolver<Source, Destination>(handler: @escaping (Source, Destination) -> Void) {
         
         let temporaryDependencyCoordinator = DependencyCoordinator(kind: .temporary)
-        let temporaryDependencyCoordinatorID = temporaryDependencyCoordinator.id
         self.dependencyCoordinator.childCoordinators.append(temporaryDependencyCoordinator)
         
-        temporaryDependencyCoordinator.register(dependencyResolver: UIViewControllerContextDependencyResolver(handler: { (source: Source, destination: Destination) in
+        temporaryDependencyCoordinator.register(dependencyResolver: UIViewControllerContextDependencyResolver(handler: { [weak temporaryDependencyCoordinator] (source: Source, destination: Destination) in
             
             handler(source, destination)
-            (destination as? UIViewController)?.dependencyCoordinator.removeChild(withID: temporaryDependencyCoordinatorID)
+            temporaryDependencyCoordinator?.removeFromParent()
         }))
     }
     

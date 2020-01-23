@@ -17,3 +17,6 @@ import Foundation
 
 
 //search for `ZAGREI` to find key wondering points
+
+///Assign a custom debug prefix used for any custom debug descriptions
+public var debugPrefix = ""

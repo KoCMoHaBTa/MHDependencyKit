@@ -12,6 +12,7 @@ import Foundation
 public struct AnyConsumerDependencyResolver: ConsumerDependencyResolver {
     
     private let handler: (Consumer) -> Void
+    private var copyHandler: () -> Self
     
     //MARK: - Init
     
@@ -27,12 +28,22 @@ public struct AnyConsumerDependencyResolver: ConsumerDependencyResolver {
             
             genericHandler(consumer)
         }
+        
+        self.copyHandler = {
+            
+            return AnyConsumerDependencyResolver(genericHandler: genericHandler)
+        }
     }
     
     ///Creates an instance of the receiver by providing a dependency resolving handler.
     public init(handler: @escaping (Consumer) -> Void) {
         
         self.handler = handler
+        
+        self.copyHandler = {
+            
+            return AnyConsumerDependencyResolver(handler: handler)
+        }
     }
     
     ///Creates an instance of the receiver by providing a dependency resolving handler for a specific Provider and specific Consumer types.
@@ -48,5 +59,10 @@ public struct AnyConsumerDependencyResolver: ConsumerDependencyResolver {
     public func resolveDependencies(to consumer: Consumer) {
         
         self.handler(consumer)
+    }
+    
+    public func copy() -> AnyConsumerDependencyResolver {
+        
+        return self.copyHandler()
     }
 }

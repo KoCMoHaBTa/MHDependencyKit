@@ -50,6 +50,8 @@ public final class UIViewControllerContextDependencyResolver<Source, Destination
     
     public func resolveDependencies(from source: Provider, to destination: Consumer) {
         
+        print(self.debugDescription)
+        
         //resolve the source
         UIViewControllerDependencyResolver(handler: { [weak self] (source: Source, _) in
             
@@ -67,6 +69,13 @@ public final class UIViewControllerContextDependencyResolver<Source, Destination
             }
             
         }).resolveDependencies(from: source, to: destination)
+    }
+    
+    public func copy() -> UIViewControllerContextDependencyResolver<Source, Destination> {
+        
+        let copy = UIViewControllerContextDependencyResolver<Source, Destination>.init(handler: self.handler)
+        copy.stack = self.stack
+        return copy
     }
 }
 
@@ -91,5 +100,20 @@ extension UIViewControllerContextDependencyResolver where Destination: UIViewCon
     public convenience init(handler: @escaping (Source, Destination) -> Void) {
         
         self.init(theHandler: handler)
+    }
+}
+
+extension UIViewControllerContextDependencyResolver: CustomDebugStringConvertible {
+    
+    public func description(withPrefix prefix: String) -> String {
+        
+        return "\(prefix)" + "\(type(of: self)): " + "["
+             + "\n" + self.stack.map({ $0.reference != nil ? "\(prefix)\t\(type(of: $0.reference!))" : "nil" }).joined(separator: ",\n")
+             + "\n\(prefix)]"
+    }
+
+    public var debugDescription: String {
+        
+        return self.description(withPrefix: debugPrefix)
     }
 }

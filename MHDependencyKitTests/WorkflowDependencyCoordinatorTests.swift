@@ -366,6 +366,119 @@ class WorkflowDependencyCoordinatorTests: XCTestCase {
         XCTAssertEqual(vc.dependencyCoordinator, wdc)
     }
     
+    //Branches should have isolated dependencies
+    func testBranchingWorkflowsConflicting() {
+        
+        let rootDC = DependencyCoordinator()
+        rootDC.register(dependencyResolver: UIViewControllerContextDependencyResolver(handler: { (source: UITableViewController, destination: UITableViewController) in
+            
+            destination.title = source.title
+        }))
+        
+        let root = UITableViewController()
+        root.dependencyCoordinator = rootDC
+        root.title = "root"
+        XCTAssertEqual(root.title, "root")
+        
+        let tab = UITabBarController()       //just a context placeholder, mimicing branching
+        root.resolveDependencies(to: tab)
+        XCTAssertEqual(tab.title, nil)
+        
+        let tab1 = UITableViewController()   //we want this to override root title
+        tab.resolveDependencies(to: tab1)
+        tab1.setupWorkflowDependencyCoordinator()
+        tab1.title = "tab1"
+        XCTAssertEqual(tab1.title, "tab1")
+        
+        let tab2 = UITableViewController()   //we want this to inherit the root title
+        tab.resolveDependencies(to: tab2)
+        tab2.setupWorkflowDependencyCoordinator()
+        XCTAssertEqual(tab2.title, "root")
+        
+        //add new screen to tab1 that does not fulful the resolver
+        let tab1_1 = UIViewController()
+        tab1.resolveDependencies(to: tab1_1)
+        XCTAssertEqual(tab1_1.title, nil)
+        
+        //add new screen to tab2 - this should not interfere with screens showing on the next tab
+        let tab2_1 = UITableViewController()
+        tab2.resolveDependencies(to: tab2_1)
+        XCTAssertEqual(tab2_1.title, "root")
+        
+        //add new screen to tab1_1 - this shold inherit the tab1 title, but does not (the bug we are trying to fix)
+        let tab1_2 = UITableViewController()
+        tab1_1.resolveDependencies(to: tab1_2)
+        XCTAssertEqual(tab1_2.title, "tab1")
+    }
+    
+    //Branches should have isolated dependencies
+    func testBranchingWorkflowsNotConflicting() {
+        
+        let rootDC = DependencyCoordinator()
+        rootDC.register(dependencyResolver: UIViewControllerContextDependencyResolver(handler: { (source: UITableViewController, destination: UITableViewController) in
+            
+            destination.title = source.title
+        }))
+        
+        let root = UITableViewController()
+        root.dependencyCoordinator = rootDC
+        root.title = "root"
+        XCTAssertEqual(root.title, "root")
+        
+        let tab = UITabBarController()       //just a context placeholder, mimicing branching
+        root.resolveDependencies(to: tab)
+        XCTAssertEqual(tab.title, nil)
+        
+        let tab1 = UITableViewController()   //we want this to override root title
+        tab.resolveDependencies(to: tab1)
+        tab1.title = "tab1"
+        XCTAssertEqual(tab1.title, "tab1")
+        
+        let tab2 = UITableViewController()   //we want this to inherit the root title
+        tab.resolveDependencies(to: tab2)
+        XCTAssertEqual(tab2.title, "root")
+        
+        //add new screen to tab1 that does not fulful the resolver
+        let tab1_1 = UIViewController()
+        tab1.resolveDependencies(to: tab1_1)
+        XCTAssertEqual(tab1_1.title, nil)
+        
+        //add new screen to tab1_1 - this shold inherit the tab1 title, but does not (the bug we are trying to fix)
+        let tab1_2 = UITableViewController()
+        tab1_1.resolveDependencies(to: tab1_2)
+        XCTAssertEqual(tab1_2.title, "tab1")
+    }
+    
+    //This is very special test case. It checks whenever the behaviour of the dependency coordinators is working properly when workflows and temporary resovers are used alongside
+    //1) First things to be resolved should be the default dependencies
+    //2) Second things to be resolved should be the workflow specific dependencies
+    //3) Third thing to be resolved should be any temporary dependnecies
+    func testBranchesAndTemporaryReolsvers() {
+        
+        let root = UIViewController()
+        root.dependencyCoordinator = DependencyCoordinator()
+        root.dependencyCoordinator.register(dependencyResolver: UIViewControllerDependencyResolver { (source, destination) in
+            
+            destination.title = source.title
+        })
+        root.title = "root"
+        
+        let workflow = UIViewController()
+        root.resolveDependencies(to: workflow)
+        XCTAssertEqual(workflow.title, "root")
+        
+        workflow.setupWorkflowDependencyCoordinator()
+        
+        workflow.registerTemporaryContextDependencyResolver { (source, destination) in
+            
+            destination.title = "temp"
+        }
+        
+        let vc = UIViewController()
+        workflow.resolveDependencies(to: vc)
+        XCTAssertEqual(vc.title, "temp")
+    }
+    
     //NOTE: Should investigate if these test cases are valind in the future
 //    func testMultipleContextDestinationsEGTabBarControllerWithWorkflowDependencyCoordinator() {
 //

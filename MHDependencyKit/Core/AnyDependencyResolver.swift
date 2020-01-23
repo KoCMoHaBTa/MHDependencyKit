@@ -9,9 +9,11 @@
 import Foundation
 
 ///A non-generic type erasure of DependencyResolver
-public struct AnyDependencyResolver: DependencyResolver {
+public struct AnyDependencyResolver: DependencyResolver, CustomDebugStringConvertible {
     
     private let handler: (Provider, Consumer) -> Void
+    private var copyHandler: () -> Self
+    public private(set) var debugDescription: String
     
     //MARK: - Init
     
@@ -27,12 +29,26 @@ public struct AnyDependencyResolver: DependencyResolver {
             
             genericHandler(provider, consumer)
         }
+        
+        self.copyHandler = {
+            
+            return AnyDependencyResolver(genericHandler: genericHandler)
+        }
+        
+        self.debugDescription = "AnyDependencyResolver<\(Provider.self), \(Consumer.self)>"
     }
     
     ///Creates an instance of the receiver by providing a dependency resolving handler for a any Provider and any Consumer types.
     public init(handler: @escaping (Provider, Consumer) -> Void) {
         
         self.handler = handler
+        
+        self.copyHandler = {
+            
+            return AnyDependencyResolver(handler: handler)
+        }
+        
+        self.debugDescription = "AnyDependencyResolver<\(Provider.self), \(Consumer.self)>"
     }
     
     ///Creates an instance of the receiver by providing a dependency resolving handler for a specific Provider and specific Consumer types.
@@ -57,6 +73,11 @@ public struct AnyDependencyResolver: DependencyResolver {
     public init<T: DependencyResolver>(other dependencyResolver: T) {
         
         self.init(handler: dependencyResolver.resolveDependencies)
+        self.copyHandler = {
+            
+            return AnyDependencyResolver(genericHandler: dependencyResolver.copy().resolveDependencies)
+        }
+        self.debugDescription = "AnyDependencyResolver(other: \(String(reflecting: dependencyResolver))"
     }
 
     //MARK: - DependencyResolver
@@ -67,6 +88,11 @@ public struct AnyDependencyResolver: DependencyResolver {
     public func resolveDependencies(from provider: Provider, to consumer: Consumer) {
         
         self.handler(provider, consumer)
+    }
+    
+    public func copy() -> AnyDependencyResolver {
+        
+        return self.copyHandler()
     }
 }
 

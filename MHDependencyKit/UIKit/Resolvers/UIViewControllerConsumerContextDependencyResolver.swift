@@ -63,4 +63,11 @@ public final class UIViewControllerConsumerContextDependencyResolver<Destination
 
         }).resolveDependencies(to: destination)
     }
+    
+    public func copy() -> UIViewControllerConsumerContextDependencyResolver<Destination> {
+        
+        let copy = UIViewControllerConsumerContextDependencyResolver<Destination>.init(handler: self.handler)
+        copy.stack = self.stack
+        return copy
+    }
 }

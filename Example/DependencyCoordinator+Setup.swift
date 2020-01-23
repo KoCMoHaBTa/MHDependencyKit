@@ -36,5 +36,11 @@ extension DependencyCoordinator {
             
             destination.textToDisplay = source.textInputValue
         }))
+        
+        self.register(dependencyResolver: UIViewControllerContextDependencyResolver(handler: { (source: ColorConfigurable, destination: ColorConfigurable) in
+            
+            print("@@ resolving color \(source.color?.debugDescription ?? "nil") from \(type(of: source)) to \(type(of: destination))")
+            destination.color = source.color
+        }))
     }
 }

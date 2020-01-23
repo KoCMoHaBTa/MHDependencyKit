@@ -50,6 +50,12 @@
 		E691D638213D2C80008A3B2E /* XCTestExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E691D637213D2C7F008A3B2E /* XCTestExtensions.swift */; };
 		E691D63A213D2CEE008A3B2E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E691D639213D2CEE008A3B2E /* ViewController.swift */; };
 		E691D63D213D2DDC008A3B2E /* DependencyCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E691D63C213D2DDC008A3B2E /* DependencyCoordinator.swift */; };
+		E6A2C5E523D6087200DF00B4 /* ColoredViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A2C5E423D6087200DF00B4 /* ColoredViewController.swift */; };
+		E6A2C5E723D6FAF600DF00B4 /* Branching.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6A2C5E623D6FAF600DF00B4 /* Branching.storyboard */; };
+		E6A2C5E923D6FB3E00DF00B4 /* ReplaceAllSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A2C5E823D6FB3E00DF00B4 /* ReplaceAllSegue.swift */; };
+		E6A2C5EB23D6FC2F00DF00B4 /* ColorConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A2C5EA23D6FC2F00DF00B4 /* ColorConfigurable.swift */; };
+		E6A2C5ED23D6FC7A00DF00B4 /* ColorSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A2C5EC23D6FC7A00DF00B4 /* ColorSelectionViewController.swift */; };
+		E6A2C5EF23D6FC8600DF00B4 /* ColoredTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A2C5EE23D6FC8600DF00B4 /* ColoredTabBarController.swift */; };
 		E6DA206E222978C300DB24FA /* WeakReferenceWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DA206D222978C300DB24FA /* WeakReferenceWrapper.swift */; };
 		E6F6C7B5237446E1006DE788 /* UIViewController+TemporaryDependencyCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F6C7B4237446E1006DE788 /* UIViewController+TemporaryDependencyCoordinator.swift */; };
 		E6F6C7B7237446F1006DE788 /* UIViewController+WorkflowDependencyCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F6C7B6237446F1006DE788 /* UIViewController+WorkflowDependencyCoordinator.swift */; };
@@ -96,7 +102,7 @@
 		E62349C921EE10DA00AFB0BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E62349CC21EE10DA00AFB0BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E62349CE21EE10DA00AFB0BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E627993921F8BD0B00BE252C /* MHDependencyKit.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = MHDependencyKit.podspec; sourceTree = "<group>"; };
+		E627993921F8BD0B00BE252C /* MHDependencyKit.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = MHDependencyKit.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		E627993A21F8BFFF00BE252C /* InputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
 		E627994621F8C53800BE252C /* TextInputConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputConfigurable.swift; sourceTree = "<group>"; };
 		E627994821F8C57B00BE252C /* AppVersionConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersionConfigurable.swift; sourceTree = "<group>"; };
@@ -138,6 +144,12 @@
 		E691D637213D2C7F008A3B2E /* XCTestExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestExtensions.swift; sourceTree = "<group>"; };
 		E691D639213D2CEE008A3B2E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E691D63C213D2DDC008A3B2E /* DependencyCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyCoordinator.swift; sourceTree = "<group>"; };
+		E6A2C5E423D6087200DF00B4 /* ColoredViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoredViewController.swift; sourceTree = "<group>"; };
+		E6A2C5E623D6FAF600DF00B4 /* Branching.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Branching.storyboard; sourceTree = "<group>"; };
+		E6A2C5E823D6FB3E00DF00B4 /* ReplaceAllSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplaceAllSegue.swift; sourceTree = "<group>"; };
+		E6A2C5EA23D6FC2F00DF00B4 /* ColorConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConfigurable.swift; sourceTree = "<group>"; };
+		E6A2C5EC23D6FC7A00DF00B4 /* ColorSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSelectionViewController.swift; sourceTree = "<group>"; };
+		E6A2C5EE23D6FC8600DF00B4 /* ColoredTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoredTabBarController.swift; sourceTree = "<group>"; };
 		E6DA206D222978C300DB24FA /* WeakReferenceWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakReferenceWrapper.swift; sourceTree = "<group>"; };
 		E6F6C7B4237446E1006DE788 /* UIViewController+TemporaryDependencyCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+TemporaryDependencyCoordinator.swift"; sourceTree = "<group>"; };
 		E6F6C7B6237446F1006DE788 /* UIViewController+WorkflowDependencyCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+WorkflowDependencyCoordinator.swift"; sourceTree = "<group>"; };
@@ -177,9 +189,11 @@
 			children = (
 				E62349C221EE10D800AFB0BA /* AppDelegate.swift */,
 				E627994B21F8C5CD00BE252C /* DependencyCoordinator+Setup.swift */,
+				E6A2C5E823D6FB3E00DF00B4 /* ReplaceAllSegue.swift */,
 				E627994A21F8C5A900BE252C /* Configurables */,
 				E627995121F9AFD500BE252C /* ViewControllers */,
 				E62349C621EE10D800AFB0BA /* Main.storyboard */,
+				E6A2C5E623D6FAF600DF00B4 /* Branching.storyboard */,
 				E62349C921EE10DA00AFB0BA /* Assets.xcassets */,
 				E62349CB21EE10DA00AFB0BA /* LaunchScreen.storyboard */,
 				E62349CE21EE10DA00AFB0BA /* Info.plist */,
@@ -194,6 +208,7 @@
 				E627994D21F8C5FF00BE252C /* TextDisplaConfigurable.swift */,
 				E627996121F9EA8B00BE252C /* ContextTextDisplaConfigurable.swift */,
 				E627994821F8C57B00BE252C /* AppVersionConfigurable.swift */,
+				E6A2C5EA23D6FC2F00DF00B4 /* ColorConfigurable.swift */,
 			);
 			path = Configurables;
 			sourceTree = "<group>";
@@ -205,6 +220,9 @@
 				E627993A21F8BFFF00BE252C /* InputViewController.swift */,
 				E627994F21F9AFC000BE252C /* TextDisplayViewController.swift */,
 				E627995F21F9EA6000BE252C /* ContextTextDisplayViewController.swift */,
+				E6A2C5E423D6087200DF00B4 /* ColoredViewController.swift */,
+				E6A2C5EC23D6FC7A00DF00B4 /* ColorSelectionViewController.swift */,
+				E6A2C5EE23D6FC8600DF00B4 /* ColoredTabBarController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -388,12 +406,13 @@
 		E691D607213D2AE2008A3B2E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1010;
+				LastSwiftUpdateCheck = 1130;
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = KoCMoHaBTa;
 				TargetAttributes = {
 					E62349BF21EE10D800AFB0BA = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1130;
 					};
 					E691D60F213D2AE2008A3B2E = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -433,6 +452,7 @@
 				E62349CD21EE10DA00AFB0BA /* LaunchScreen.storyboard in Resources */,
 				E62349CA21EE10DA00AFB0BA /* Assets.xcassets in Resources */,
 				E62349C821EE10D800AFB0BA /* Main.storyboard in Resources */,
+				E6A2C5E723D6FAF600DF00B4 /* Branching.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,12 +479,17 @@
 			files = (
 				E627994721F8C53800BE252C /* TextInputConfigurable.swift in Sources */,
 				E627993B21F8BFFF00BE252C /* InputViewController.swift in Sources */,
+				E6A2C5E923D6FB3E00DF00B4 /* ReplaceAllSegue.swift in Sources */,
 				E627996221F9EA8B00BE252C /* ContextTextDisplaConfigurable.swift in Sources */,
 				E627996021F9EA6000BE252C /* ContextTextDisplayViewController.swift in Sources */,
 				E62349C521EE10D800AFB0BA /* ViewController.swift in Sources */,
+				E6A2C5E523D6087200DF00B4 /* ColoredViewController.swift in Sources */,
 				E627994E21F8C5FF00BE252C /* TextDisplaConfigurable.swift in Sources */,
+				E6A2C5EB23D6FC2F00DF00B4 /* ColorConfigurable.swift in Sources */,
 				E627995021F9AFC000BE252C /* TextDisplayViewController.swift in Sources */,
+				E6A2C5EF23D6FC8600DF00B4 /* ColoredTabBarController.swift in Sources */,
 				E62349C321EE10D800AFB0BA /* AppDelegate.swift in Sources */,
+				E6A2C5ED23D6FC7A00DF00B4 /* ColorSelectionViewController.swift in Sources */,
 				E627994921F8C57B00BE252C /* AppVersionConfigurable.swift in Sources */,
 				E627994C21F8C5CD00BE252C /* DependencyCoordinator+Setup.swift in Sources */,
 			);
@@ -565,7 +590,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.KoCMoHaBTa.MHDependencyKit.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -585,7 +610,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.KoCMoHaBTa.MHDependencyKit.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

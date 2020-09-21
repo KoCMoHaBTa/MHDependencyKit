@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "MHDependencyKit"
-  s.version      = "1.3.0"
+  s.version      = "1.4.0"
   s.source       = { :git => "https://github.com/KoCMoHaBTa/#{s.name}.git", :tag => "#{s.version}" }
   s.license      = { :type => "MIT", :file => "LICENSE" }
   s.author       = "Milen Halachev"
@@ -12,8 +12,8 @@ Pod::Spec.new do |s|
                         The main goal of the library is to simplify the depdendency resolution between UIViewController objects, especially when using storyboard segues. The approach used in protocol oriented, where dependencies are defined as protocols and the view controllers just implement them in order to declare their needs. The DependencyCoordinator, once setup at the app's entry point, will automatically resolve all dependencies between any view controller obejcts, no matter where it appears in the workflow.
                     DESC
 
-  s.swift_version = "5.1"
-  s.ios.deployment_target = "8.0"
+  s.swift_version = "5.3"
+  s.ios.deployment_target = "9.0"
 
   s.source_files  = "#{s.name}/**/*.swift", "#{s.name}/**/*.{h,m}"
   s.public_header_files = "#{s.name}/**/*.h"

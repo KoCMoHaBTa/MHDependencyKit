@@ -407,7 +407,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1130;
-				LastUpgradeCheck = 1200;
+				LastUpgradeCheck = 1300;
 				ORGANIZATIONNAME = KoCMoHaBTa;
 				TargetAttributes = {
 					E62349BF21EE10D800AFB0BA = {

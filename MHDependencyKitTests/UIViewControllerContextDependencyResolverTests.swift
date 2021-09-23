@@ -320,7 +320,7 @@ class UIViewControllerContextDependencyResolverTests: XCTestCase {
     }
 }
 
-private protocol TestConfigurable: class {
+private protocol TestConfigurable: AnyObject {
     
     var data: String? { get set }
 }

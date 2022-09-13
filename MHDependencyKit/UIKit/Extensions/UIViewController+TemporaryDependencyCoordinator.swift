@@ -16,7 +16,7 @@ extension UIViewController {
     
     ///An additional, temporary, one time usable dependency coordinator. Once it is used, its reference is set to nil. Can be used to fine tune next segue. Used in condjuction with `performSegue(withIdentifier:sender:prepareHandler)`
     @available(*, deprecated, message: "Use registerTemporaryContextDependencyResolver(handler:) instead")
-    open var temporaryDependencyCoordinator: DependencyCoordinator? {
+    public var temporaryDependencyCoordinator: DependencyCoordinator? {
         
         get {
             

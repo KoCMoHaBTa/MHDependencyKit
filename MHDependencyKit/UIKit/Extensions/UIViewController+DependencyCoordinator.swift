@@ -14,7 +14,7 @@ extension UIViewController {
     private static var dependencyCoordinatorKey = ""
     
     ///The dependency coordinator associated with the receiver - default to the shared instance `DependencyCoordinator.default`
-    open var dependencyCoordinator: DependencyCoordinator {
+    public var dependencyCoordinator: DependencyCoordinator {
         
         get {
             
@@ -28,12 +28,12 @@ extension UIViewController {
     }
     
     ///Resolve the dependencies from the receiver to a given destination, usually the next view controller that will be shown
-    open func resolveDependencies<T>(to destination: T) {
+    public func resolveDependencies<T>(to destination: T) {
         
         self.dependencyCoordinator.resolveDependencies(from: self, to: destination)
     }
     
-    open func resolveDependencies(fromSender sender: Any?, to segue: UIStoryboardSegue) {
+    public func resolveDependencies(fromSender sender: Any?, to segue: UIStoryboardSegue) {
         
         self.dependencyCoordinator.resolveDependencies(fromSender: sender, to: segue)
     }

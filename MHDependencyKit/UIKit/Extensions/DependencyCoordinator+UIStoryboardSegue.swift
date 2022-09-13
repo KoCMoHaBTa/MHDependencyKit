@@ -10,7 +10,7 @@ import Foundation
 
 extension DependencyCoordinator {
     
-    open func resolveDependencies(fromSender sender: Any?, to segue: UIStoryboardSegue) {
+    public func resolveDependencies(fromSender sender: Any?, to segue: UIStoryboardSegue) {
         
         if let sender = sender {
             

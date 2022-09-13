@@ -70,17 +70,17 @@ open class DependencyCoordinator: Identifiable {
 
 extension DependencyCoordinator {
     
-    open func addChild(_ coordinator: DependencyCoordinator) {
+    public func addChild(_ coordinator: DependencyCoordinator) {
         
         self.childCoordinators.append(coordinator)
     }
     
-    open func removeChild(_ coordinator: DependencyCoordinator) {
+    public func removeChild(_ coordinator: DependencyCoordinator) {
         
         self.removeChild(withID: coordinator.id)
     }
     
-    open func removeChild(withID id: DependencyCoordinator.ID) {
+    public func removeChild(withID id: DependencyCoordinator.ID) {
         
         self.childCoordinators.removeAll { (child) -> Bool in
             
@@ -89,7 +89,7 @@ extension DependencyCoordinator {
         }
     }
     
-    open func removeFromParent() {
+    public func removeFromParent() {
         
         self.parentCoordinator?.removeChild(self)
     }
@@ -134,7 +134,7 @@ extension DependencyCoordinator {
     public typealias Consumer = Any
     
     ///Resolves the registered dependencies from the given provider to the given consumer.
-    open func resolveDependencies(from provider: Provider, to consumer: Consumer) {
+    public func resolveDependencies(from provider: Provider, to consumer: Consumer) {
         
         self.dependencyResolvers.resolveDependencies(from: provider, to: consumer)
         self.childCoordinators.dependencyResolvers.resolveDependencies(from: provider, to: consumer)
@@ -145,7 +145,7 @@ extension DependencyCoordinator {
      - parameter consumer: The consumer to which to resolve dependencies.
      - note: The provider specified to each resolver is of Void type.
      */
-    open func resolveDependencies(to consumer: Consumer) {
+    public func resolveDependencies(to consumer: Consumer) {
         
         self.resolveDependencies(from: (), to: consumer)
     }
@@ -156,13 +156,13 @@ extension DependencyCoordinator {
 extension DependencyCoordinator {
     
     ///Registers an existing dependency resolver.
-    open func register(dependencyResolver: AnyDependencyResolver) {
+    public func register(dependencyResolver: AnyDependencyResolver) {
         
         self.dependencyResolvers.append(dependencyResolver)
     }
     
     ///Registers an existing dependency resolver.
-    open func register<T: DependencyResolver>(dependencyResolver: T) {
+    public func register<T: DependencyResolver>(dependencyResolver: T) {
         
         self.register(dependencyResolver: AnyDependencyResolver(other: dependencyResolver))
     }

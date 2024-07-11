@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol AppVersionConfigurable: class {
+protocol AppVersionConfigurable: AnyObject {
     
     var appVersion: String? { get set }
 }

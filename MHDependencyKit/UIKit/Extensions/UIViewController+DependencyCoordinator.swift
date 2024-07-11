@@ -11,7 +11,7 @@ import UIKit
 
 extension UIViewController {
     
-    private static var dependencyCoordinatorKey = ""
+    private static var dependencyCoordinatorKey: Void?
     
     ///The dependency coordinator associated with the receiver - default to the shared instance `DependencyCoordinator.default`
     public var dependencyCoordinator: DependencyCoordinator {

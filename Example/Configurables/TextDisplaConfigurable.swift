@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol TextDisplaConfigurable: class {
+protocol TextDisplaConfigurable: AnyObject {
     
     var textToDisplay: String? { get set }
 }

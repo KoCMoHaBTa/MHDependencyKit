@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol TextInputConfigurable: class {
+protocol TextInputConfigurable: AnyObject {
     
     var textInputValue: String? { get set }
 }
